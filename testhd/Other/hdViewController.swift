@@ -20,68 +20,87 @@ class hdViewController: UIViewController,UITableViewDelegate,UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
-       self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "3"), forBarMetrics: .Default)
+        self.view.backgroundColor = UIColor.white
+//       self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "3"), forBarMetrics: .default)
         
-        var tableView = UITableView()
+//         self.navigationController?.navigationBar.setBackgroundImage(UIImage, for: UIBarMetrics)
+        
+        
+       let  tableView = UITableView()
       
         
 
-        tableView = UITableView(frame: CGRectMake(0, 0, view.frame.size.width, view.frame.size.height), style: UITableViewStyle.Plain)
-        tableView.dataSource = self
-        tableView.delegate = self
+        tableView.frame = self.view.frame
+       
 
 //        print("这都是什么 ");
         
         self.view.addSubview(tableView)
+        tableView.dataSource = self
+        tableView.delegate = self
         
-        tableView.registerClass(UITableViewCell().classForCoder, forCellReuseIdentifier: ID)
+//        tableView.register(UITableViewCell(), forCellReuseIdentifier: ID)
 
         // Do any additional setup after loading the view.
     }
   
+  
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return datas.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // 获得cell
-        let cell = tableView.dequeueReusableCellWithIdentifier(ID, forIndexPath: indexPath)
- 
-//        配置cell
-        cell.textLabel?.text = "假数据-\(datas[indexPath.row])"
-        return cell
-        
-    }
-   
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-     
-        self.navigationController?.popViewControllerAnimated(true)
-        
-//        var test:hdtest;
-        
-        let test = hdtest()
-//        hdtest.hhh()
-        test.sayHi("Li ming")
-        
-     let helloStr = test.sayHello("你好", WithName: "罗先生")
-        if helloStr.isEmpty{
-           
-        }else{
-           print(helloStr)  
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+            return datas.count
         }
-        print(helloStr + test.sayHi("Li ming"))
         
-//        hdtest.hhh(10)
-        print(hdtest.hhh(10))
-//        let oterVC:OtherViewController = OtherViewController()
-//        self.navigationController?.pushViewController(oterVC, animated: true)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 获得cell
         
-//        self.tabBarController?.selectedIndex = 1
+        let identifier="identtifier";
+        var cell=tableView.dequeueReusableCell(withIdentifier: identifier)
+        if(cell == nil){
+            cell=UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: identifier);
+        }
+        
+//        cell?.textLabel?.text = itemStringArr[indexPath.row];
+        cell?.detailTextLabel?.text = "待添加内容";
+        cell?.detailTextLabel?.font = UIFont .systemFont(ofSize: CGFloat(13))
+        cell?.accessoryType=UITableViewCellAccessoryType.disclosureIndicator
+        
+        return cell!
     }
+        
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+//        func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//
+//
+//
+//
+//            //        var test:hdtest;
+//
+//            //        let test = hdtest()
+//            ////        hdtest.hhh()
+//            //        test.sayHi("Li ming")
+//            //
+//            //     let helloStr = test.sayHello("你好", WithName: "罗先生")
+//            //        if helloStr.isEmpty{
+//            //
+//            //        }else{
+//            //           print(helloStr)
+//            //        }
+//            //        print(helloStr + test.sayHi("Li ming"))
+//            //
+//            ////        hdtest.hhh(10)
+//            //        print(hdtest.hhh(10))
+//            //        let oterVC:OtherViewController = OtherViewController()
+//            //        self.navigationController?.pushViewController(oterVC, animated: true)
+//
+//            //        self.tabBarController?.selectedIndex = 1
+//        }
+//
+
+        
     
     
     

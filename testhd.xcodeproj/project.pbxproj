@@ -30,6 +30,7 @@
 		84A2A08A1F7A57010003825D /* data.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2A0841F7A57010003825D /* data.png */; };
 		84A2A08B1F7A57010003825D /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2A0851F7A57010003825D /* location.png */; };
 		84A2A08C1F7A57010003825D /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2A0861F7A57010003825D /* write.png */; };
+		84AD05171F94917C00117033 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD05161F94917C00117033 /* KVOViewController.m */; };
 		84FA5D2C1F79EFDD00A3F311 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA5D211F79EFDD00A3F311 /* AppDelegate.m */; };
 		84FA5D2D1F79EFDD00A3F311 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA5D241F79EFDD00A3F311 /* OtherViewController.m */; };
 		84FA5D2E1F79EFDD00A3F311 /* HdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA5D281F79EFDD00A3F311 /* HdTableViewCell.m */; };
@@ -80,6 +81,9 @@
 		84A2A0841F7A57010003825D /* data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data.png; sourceTree = "<group>"; };
 		84A2A0851F7A57010003825D /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		84A2A0861F7A57010003825D /* write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write.png; sourceTree = "<group>"; };
+		84AD05151F94917C00117033 /* KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOViewController.h; sourceTree = "<group>"; };
+		84AD05161F94917C00117033 /* KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOViewController.m; sourceTree = "<group>"; };
+		84AD05191F94946100117033 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		84FA5D201F79EFDD00A3F311 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84FA5D211F79EFDD00A3F311 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		84FA5D231F79EFDD00A3F311 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 			children = (
 				84FA5D341F7A400E00A3F311 /* testhd-Bridging-Header.h */,
 				8449428A1F6F9B1F00D19F32 /* main.m */,
+				84AD05191F94946100117033 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -203,6 +208,15 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		848AABE81F94903D0094DCF8 /* observe */ = {
+			isa = PBXGroup;
+			children = (
+				84AD05151F94917C00117033 /* KVOViewController.h */,
+				84AD05161F94917C00117033 /* KVOViewController.m */,
+			);
+			path = observe;
+			sourceTree = "<group>";
+		};
 		84A2A0801F7A57010003825D /* image */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +246,7 @@
 		84FA5D221F79EFDD00A3F311 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				848AABE81F94903D0094DCF8 /* observe */,
 				84FA5D231F79EFDD00A3F311 /* OtherViewController.h */,
 				84FA5D241F79EFDD00A3F311 /* OtherViewController.m */,
 				8424A4651F7A4307000B759E /* hdtest.swift */,
@@ -291,6 +306,8 @@
 				TargetAttributes = {
 					844942851F6F9B1F00D19F32 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8SHBHSU2F5;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -346,6 +363,7 @@
 				8452F3101F7B8E2F002098F4 /* MASLayoutConstraint.m in Sources */,
 				8452F30E1F7B8E2F002098F4 /* MASConstraint.m in Sources */,
 				8452F3141F7B8E2F002098F4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				84AD05171F94917C00117033 /* KVOViewController.m in Sources */,
 				8452F30D1F7B8E2F002098F4 /* MASCompositeConstraint.m in Sources */,
 				8424A4641F7A42D0000B759E /* hdViewController.swift in Sources */,
 				8411B7F71F8F451C00BBEC3E /* iCarousel.m in Sources */,
@@ -421,6 +439,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -458,6 +477,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -468,15 +488,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8SHBHSU2F5;
 				INFOPLIST_FILE = testhd/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.hd.testhd;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lulu.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5e0066cf-5c15-4392-b999-4d2001cec11f";
+				PROVISIONING_PROFILE_SPECIFIER = test_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/luomacmini/Desktop/testhd/testhd/Other/testhd-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -485,14 +510,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8SHBHSU2F5;
 				INFOPLIST_FILE = testhd/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.hd.testhd;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lulu.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5e0066cf-5c15-4392-b999-4d2001cec11f";
+				PROVISIONING_PROFILE_SPECIFIER = test_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/luomacmini/Desktop/testhd/testhd/Other/testhd-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

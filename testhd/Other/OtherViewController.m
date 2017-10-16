@@ -198,10 +198,10 @@
     
 //    mas_updateConstraints 针对上面的情况 会更新block中出现的约束 不会导致出现两个相同的约束的情况 但必须是同一参照物
     
-    [_carousel mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(64);
-//        make.baseline.mas_equalTo(10);
-    }];
+//    [_carousel mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(64);
+////        make.baseline.mas_equalTo(10);
+//    }];
     NSLog(@"点击");
     
 //    [self updateViewConstraints];
