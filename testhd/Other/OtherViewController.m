@@ -202,6 +202,7 @@
         make.top.mas_equalTo(64);
 //        make.baseline.mas_equalTo(10);
     }];
+    NSLog(@"点击");
     
 //    [self updateViewConstraints];
 //    
