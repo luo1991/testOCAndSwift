@@ -31,6 +31,7 @@
 		84A2A08B1F7A57010003825D /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2A0851F7A57010003825D /* location.png */; };
 		84A2A08C1F7A57010003825D /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2A0861F7A57010003825D /* write.png */; };
 		84AD05171F94917C00117033 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD05161F94917C00117033 /* KVOViewController.m */; };
+		84F4CC1B1F95AF8500C77A9B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4CC1A1F95AF8500C77A9B /* TestViewController.m */; };
 		84FA5D2C1F79EFDD00A3F311 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA5D211F79EFDD00A3F311 /* AppDelegate.m */; };
 		84FA5D2D1F79EFDD00A3F311 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA5D241F79EFDD00A3F311 /* OtherViewController.m */; };
 		84FA5D2E1F79EFDD00A3F311 /* HdTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA5D281F79EFDD00A3F311 /* HdTableViewCell.m */; };
@@ -84,6 +85,8 @@
 		84AD05151F94917C00117033 /* KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOViewController.h; sourceTree = "<group>"; };
 		84AD05161F94917C00117033 /* KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOViewController.m; sourceTree = "<group>"; };
 		84AD05191F94946100117033 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		84F4CC191F95AF8500C77A9B /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		84F4CC1A1F95AF8500C77A9B /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		84FA5D201F79EFDD00A3F311 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84FA5D211F79EFDD00A3F311 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		84FA5D231F79EFDD00A3F311 /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherViewController.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 			children = (
 				84AD05151F94917C00117033 /* KVOViewController.h */,
 				84AD05161F94917C00117033 /* KVOViewController.m */,
+				84F4CC191F95AF8500C77A9B /* TestViewController.h */,
+				84F4CC1A1F95AF8500C77A9B /* TestViewController.m */,
 			);
 			path = observe;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 				8452F3101F7B8E2F002098F4 /* MASLayoutConstraint.m in Sources */,
 				8452F30E1F7B8E2F002098F4 /* MASConstraint.m in Sources */,
 				8452F3141F7B8E2F002098F4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				84F4CC1B1F95AF8500C77A9B /* TestViewController.m in Sources */,
 				84AD05171F94917C00117033 /* KVOViewController.m in Sources */,
 				8452F30D1F7B8E2F002098F4 /* MASCompositeConstraint.m in Sources */,
 				8424A4641F7A42D0000B759E /* hdViewController.swift in Sources */,
@@ -425,6 +431,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = /Users/luomacmini/Desktop/testhd/testhd/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -468,6 +475,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = /Users/luomacmini/Desktop/testhd/testhd/PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

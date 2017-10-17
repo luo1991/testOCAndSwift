@@ -19,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    UINavigationController *navLogin = [[UINavigationController alloc] initWithRootViewController:];
     self.window.rootViewController = [[HdTabBarController alloc] init];
+    
     // Override point for customization after application launch.
     return YES;
 }

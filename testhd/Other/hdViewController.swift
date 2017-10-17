@@ -9,6 +9,8 @@
 import UIKit
 //import OtherViewController
 
+
+
  let ID = "hdcell"
 
 class hdViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
@@ -69,7 +71,14 @@ class hdViewController: UIViewController,UITableViewDelegate,UITableViewDataSour
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        self.navigationController?.popViewController(animated: true)
+        
+         let oterVC:KVOViewController = KVOViewController()
+        
+        self.navigationController?.pushViewController(oterVC, animated: true)
+        
+//        self.navigationController?.popViewController(animated: true)
+       
+        
         
     }
 //        func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
