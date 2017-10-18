@@ -16,6 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIButton *testBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.view addSubview:testBtn];
+    [testBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(120, 120));
+        
+    }];
+    
     // Do any additional setup after loading the view.
 }
 
