@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HdTabBarController.h"
-
+#import "TestViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    UINavigationController *navLogin = [[UINavigationController alloc] initWithRootViewController:];
     self.window.rootViewController = [[HdTabBarController alloc] init];
+//     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[TestViewController alloc] init]];
     // Override point for customization after application launch.
     return YES;
 }

@@ -10,6 +10,8 @@
 #import "ViewController.h"
 #import "OtherViewController.h"
 #import "HdNavigationController.h"
+#import "TestViewController.h"
+#import "PersonViewController.h"
 
 @interface HdTabBarController ()
 
@@ -19,15 +21,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    ViewController  *HomeViewController= [[ViewController alloc] init];
-    [self addChildViewController:HomeViewController andTitle:@"首页" andNormalImage:nil andSelectImage:nil];
+    
+        [[UITabBar appearance] setBackgroundColor:[UIColor whiteColor]];
+    
+   
+    TestViewController  *HomeViewController= [[TestViewController alloc] init];
+    [self addChildViewController:HomeViewController andTitle:@"首页" andNormalImage:@"index" andSelectImage:@"index_cur.png"];
     OtherViewController *otherVC = [[OtherViewController alloc] init];
-    [self addChildViewController:otherVC andTitle:@"其他" andNormalImage:nil andSelectImage:nil];
+    [self addChildViewController:otherVC andTitle:@"其他" andNormalImage:@"index" andSelectImage:@"news_cur"];
+    PersonViewController *personVC = [[PersonViewController alloc] init];
+    [self addChildViewController:personVC andTitle:@"我的" andNormalImage:@"index" andSelectImage:nil];
     
     // Do any additional setup after loading the view.
 }
 -(void)addChildViewController:(UIViewController *)childController andTitle:(NSString *)titleString andNormalImage:(NSString *)normalImage andSelectImage:(NSString *)selectImage{
-    HdNavigationController *navController = [[UINavigationController alloc] initWithRootViewController:childController];
+    HdNavigationController *navController = [[HdNavigationController alloc] initWithRootViewController:childController];
 //    navController.navigationItem.title = titleString;
     [navController.navigationBar setTitleTextAttributes:
   @{NSFontAttributeName:[UIFont systemFontOfSize:22],
@@ -37,8 +45,12 @@
     [navController.navigationBar setBackgroundImage:[UIImage imageNamed:@"3.jpg"] forBarMetrics:UIBarMetricsDefault];
     childController.title = titleString;
     childController.tabBarItem.image = [UIImage imageNamed:normalImage];
+    
     childController.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
+    self.tabBar.tintColor = [UIColor redColor];
+    self.tabBar.dk_barTintColorPicker = DKColorPickerWithKey(BAR);
     [self addChildViewController:navController];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

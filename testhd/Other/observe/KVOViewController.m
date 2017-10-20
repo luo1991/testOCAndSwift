@@ -7,7 +7,7 @@
 //
 
 #import "KVOViewController.h"
-
+#import "TestViewController.h"
 @interface KVOViewController ()
 
 @property(nonatomic,strong)KVOViewController *kvoVC;
@@ -61,6 +61,9 @@
 }
 -(void)btnMethod{
     NSLog(@"点击");
+//    TestViewController *test = [[TestViewController alloc] init];
+//    [self presentViewController:test animated:YES completion:nil];
+    
     self.kvoVC.number = self.kvoVC.number+1;
     
 }

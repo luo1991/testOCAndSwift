@@ -28,7 +28,7 @@
     self.navigationItem.title = @"热门";
     
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-49) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-49-44-64) style:UITableViewStylePlain];
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -36,7 +36,7 @@
      self.tableView.estimatedRowHeight = 80.0f;
     self.headImageArray = @[@"data",@"location",@"write"];
     self.imageArray = @[@"1.jpg",@"2.jpg",@"3.jpg"];
-    
+    self.tableView.dk_backgroundColorPicker = DKColorPickerWithKey(BG);
     
     self.detailArray = @[@"shot",@"Aduahguhauhguhaudghuahguhudhauhg",@"dhuahgudhaughuahdughuahguhauhguhdahudhuahughduahguhadguhaduhguadhughduahguahguhadugh"];
     
@@ -57,8 +57,8 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-//    return self.headImageArray.count;
-    return 20;
+    return self.headImageArray.count;
+//    return 20;
     
 }
 #pragma mark - UITableViewDelegate
@@ -110,10 +110,13 @@
     {
      
     }
-    cell.contextLabel.text = [self  getText:@"内容" withRepeat:(indexPath.row+2) * 5 + 1];;
+    cell.dk_backgroundColorPicker = DKColorPickerWithKey(BG);
+    cell.contextLabel.dk_textColorPicker = DKColorPickerWithKey(TEXT);
+    cell.contextLabel.text = [self  getText:@"内容" withRepeat:((int)indexPath.row+2) * 10 + 1];;
     //开始异步加载图片
-    cell.headImage.image = [UIImage imageNamed:self.headImageArray[1]];
-    cell.detailImage.image = [UIImage imageNamed:self.imageArray[1]];
+     cell.selectionStyle = UITableViewCellSelectionStyleNone; 
+    cell.headImage.image = [UIImage imageNamed:self.headImageArray[indexPath.row]];
+    cell.detailImage.image = [UIImage imageNamed:self.imageArray[indexPath.row]];
     
     return cell;
 }
