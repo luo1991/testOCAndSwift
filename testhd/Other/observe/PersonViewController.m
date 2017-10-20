@@ -24,7 +24,7 @@
     self.view.backgroundColor = [UIColor grayColor];
     _dataArray = @[@[@"消息通知"],@[@"绑定手机",@"修改密码",@"清理缓存"],@[@"意见提交",@"当前版本",@"客服热线"]];
     self.infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MainWidth, MainHeight-64) style:UITableViewStyleGrouped];
-    self.infoTableView.dk_backgroundColorPicker   = DKColorPickerWithKey(BG);
+    self.infoTableView.dk_backgroundColorPicker   = DKColorPickerWithKey(SEP);
     [self.view addSubview:self.infoTableView];
 
     self.infoTableView.delegate = self;
