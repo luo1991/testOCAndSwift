@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8411B7F71F8F451C00BBEC3E /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8411B7F61F8F451C00BBEC3E /* iCarousel.m */; };
+		841663FD1F9D80DC0006B705 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841663FC1F9D80DC0006B705 /* InfoViewController.m */; };
+		841664041F9D81700006B705 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841664021F9D81700006B705 /* PersonTableViewCell.m */; };
+		841664051F9D81700006B705 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841664031F9D81700006B705 /* PersonTableViewCell.xib */; };
+		8416640E1F9DC8450006B705 /* DKNightVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8416640D1F9DC8440006B705 /* DKNightVersion.framework */; };
+		8416640F1F9DC8490006B705 /* DKNightVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8416640D1F9DC8440006B705 /* DKNightVersion.framework */; };
+		841664101F9DC8490006B705 /* DKNightVersion.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8416640D1F9DC8440006B705 /* DKNightVersion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		841E92F41F8B6CC700408D45 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841E92F11F8B6CC700408D45 /* 1.jpg */; };
 		841E92F51F8B6CC700408D45 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841E92F21F8B6CC700408D45 /* 3.jpg */; };
 		841E92F61F8B6CC700408D45 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841E92F31F8B6CC700408D45 /* 2.jpg */; };
@@ -39,9 +45,6 @@
 		84886FF31F99C95E00A309E5 /* index_cur@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84886FEA1F99C95E00A309E5 /* index_cur@3x.png */; };
 		84886FF61F99CAB300A309E5 /* tabbar_other.png in Resources */ = {isa = PBXBuildFile; fileRef = 84886FF41F99CAB300A309E5 /* tabbar_other.png */; };
 		84886FF71F99CAB300A309E5 /* tabbar_person.png in Resources */ = {isa = PBXBuildFile; fileRef = 84886FF51F99CAB300A309E5 /* tabbar_person.png */; };
-		84886FF91F99D48800A309E5 /* DKNightVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84886FF81F99D48800A309E5 /* DKNightVersion.framework */; };
-		84886FFA1F99D6BB00A309E5 /* DKNightVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84886FF81F99D48800A309E5 /* DKNightVersion.framework */; };
-		84886FFB1F99D6BB00A309E5 /* DKNightVersion.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84886FF81F99D48800A309E5 /* DKNightVersion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84886FFF1F99DD7D00A309E5 /* DKColorTable.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84886FFE1F99DD7D00A309E5 /* DKColorTable.txt */; };
 		84A2A08A1F7A57010003825D /* data.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2A0841F7A57010003825D /* data.png */; };
 		84A2A08B1F7A57010003825D /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2A0851F7A57010003825D /* location.png */; };
@@ -75,13 +78,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		84886FFC1F99D6BB00A309E5 /* Embed Frameworks */ = {
+		841663FA1F9D7FB40006B705 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				84886FFB1F99D6BB00A309E5 /* DKNightVersion.framework in Embed Frameworks */,
+				841664101F9DC8490006B705 /* DKNightVersion.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +94,13 @@
 /* Begin PBXFileReference section */
 		8411B7F51F8F451C00BBEC3E /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
 		8411B7F61F8F451C00BBEC3E /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		841663FB1F9D80DC0006B705 /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		841663FC1F9D80DC0006B705 /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		841664011F9D81700006B705 /* PersonTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonTableViewCell.h; sourceTree = "<group>"; };
+		841664021F9D81700006B705 /* PersonTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonTableViewCell.m; sourceTree = "<group>"; };
+		841664031F9D81700006B705 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
+		8416640B1F9DC7950006B705 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		8416640D1F9DC8440006B705 /* DKNightVersion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DKNightVersion.framework; path = lib/DKNightVersion.framework; sourceTree = "<group>"; };
 		841E92F11F8B6CC700408D45 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		841E92F21F8B6CC700408D45 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		841E92F31F8B6CC700408D45 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
@@ -140,7 +150,6 @@
 		84886FEA1F99C95E00A309E5 /* index_cur@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "index_cur@3x.png"; sourceTree = "<group>"; };
 		84886FF41F99CAB300A309E5 /* tabbar_other.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_other.png; sourceTree = "<group>"; };
 		84886FF51F99CAB300A309E5 /* tabbar_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_person.png; sourceTree = "<group>"; };
-		84886FF81F99D48800A309E5 /* DKNightVersion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DKNightVersion.framework; path = lib/DKNightVersion.framework; sourceTree = "<group>"; };
 		84886FFD1F99DC7800A309E5 /* DKColorTable.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = DKColorTable.txt; path = testhd/lib/DKNightVersion.framework/DKColorTable.txt; sourceTree = SOURCE_ROOT; };
 		84886FFE1F99DD7D00A309E5 /* DKColorTable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DKColorTable.txt; path = lib/DKColorTable.txt; sourceTree = "<group>"; };
 		84A2A0841F7A57010003825D /* data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data.png; sourceTree = "<group>"; };
@@ -207,8 +216,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84886FF91F99D48800A309E5 /* DKNightVersion.framework in Frameworks */,
-				84886FFA1F99D6BB00A309E5 /* DKNightVersion.framework in Frameworks */,
+				8416640E1F9DC8450006B705 /* DKNightVersion.framework in Frameworks */,
+				8416640F1F9DC8490006B705 /* DKNightVersion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,12 +242,49 @@
 			path = iCarousel;
 			sourceTree = "<group>";
 		};
+		841663FE1F9D80E00006B705 /* HDperson */ = {
+			isa = PBXGroup;
+			children = (
+				841664001F9D81420006B705 /* cell */,
+				841663FF1F9D810B0006B705 /* Contrlller */,
+			);
+			path = HDperson;
+			sourceTree = "<group>";
+		};
+		841663FF1F9D810B0006B705 /* Contrlller */ = {
+			isa = PBXGroup;
+			children = (
+				841663FB1F9D80DC0006B705 /* InfoViewController.h */,
+				841663FC1F9D80DC0006B705 /* InfoViewController.m */,
+			);
+			path = Contrlller;
+			sourceTree = "<group>";
+		};
+		841664001F9D81420006B705 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				841664011F9D81700006B705 /* PersonTableViewCell.h */,
+				841664021F9D81700006B705 /* PersonTableViewCell.m */,
+				841664031F9D81700006B705 /* PersonTableViewCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		8416640A1F9DC7940006B705 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8416640B1F9DC7950006B705 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8449427D1F6F9B1F00D19F32 = {
 			isa = PBXGroup;
 			children = (
 				8411B7F31F8F451C00BBEC3E /* lib */,
 				844942881F6F9B1F00D19F32 /* testhd */,
 				844942871F6F9B1F00D19F32 /* Products */,
+				8416640A1F9DC7940006B705 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,8 +299,8 @@
 		844942881F6F9B1F00D19F32 /* testhd */ = {
 			isa = PBXGroup;
 			children = (
+				8416640D1F9DC8440006B705 /* DKNightVersion.framework */,
 				84886FFE1F99DD7D00A309E5 /* DKColorTable.txt */,
-				84886FF81F99D48800A309E5 /* DKNightVersion.framework */,
 				8452F2F41F7B8E2F002098F4 /* lib */,
 				84A2A0801F7A57010003825D /* image */,
 				84FA5D1F1F79EFDD00A3F311 /* Main */,
@@ -321,6 +367,7 @@
 		848AABE81F94903D0094DCF8 /* observe */ = {
 			isa = PBXGroup;
 			children = (
+				841663FE1F9D80E00006B705 /* HDperson */,
 				84AD05151F94917C00117033 /* KVOViewController.h */,
 				84AD05161F94917C00117033 /* KVOViewController.m */,
 				84F4CC191F95AF8500C77A9B /* TestViewController.h */,
@@ -454,7 +501,7 @@
 				844942821F6F9B1F00D19F32 /* Sources */,
 				844942831F6F9B1F00D19F32 /* Frameworks */,
 				844942841F6F9B1F00D19F32 /* Resources */,
-				84886FFC1F99D6BB00A309E5 /* Embed Frameworks */,
+				841663FA1F9D7FB40006B705 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -519,6 +566,7 @@
 				84A2A08B1F7A57010003825D /* location.png in Resources */,
 				84FA5D2F1F79EFDD00A3F311 /* HdTableViewCell.xib in Resources */,
 				84886FFF1F99DD7D00A309E5 /* DKColorTable.txt in Resources */,
+				841664051F9D81700006B705 /* PersonTableViewCell.xib in Resources */,
 				841E92F41F8B6CC700408D45 /* 1.jpg in Resources */,
 				84886FEB1F99C95E00A309E5 /* news_cur.png in Resources */,
 				84A2A08A1F7A57010003825D /* data.png in Resources */,
@@ -547,6 +595,7 @@
 				8452F3151F7B8E2F002098F4 /* View+MASAdditions.m in Sources */,
 				84B5E5B51F95DDB20068B376 /* SDWebImageCompat.m in Sources */,
 				84B5E5B41F95DDB20068B376 /* SDImageCache.m in Sources */,
+				841663FD1F9D80DC0006B705 /* InfoViewController.m in Sources */,
 				84B5E5BD1F95DDB20068B376 /* UIImage+MultiFormat.m in Sources */,
 				84B5E5BC1F95DDB20068B376 /* UIImage+GIF.m in Sources */,
 				84B5E5B71F95DDB20068B376 /* SDWebImageDownloader.m in Sources */,
@@ -573,6 +622,7 @@
 				8452F3121F7B8E2F002098F4 /* MASViewConstraint.m in Sources */,
 				84FA5D331F79F03200A3F311 /* HdTabBarController.m in Sources */,
 				84C25E751F9846A40001D8C2 /* ReadViewController.m in Sources */,
+				841664041F9D81700006B705 /* PersonTableViewCell.m in Sources */,
 				84B5E5C11F95DDB20068B376 /* UIView+WebCacheOperation.m in Sources */,
 				84B5E5BF1F95DDB20068B376 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8452F3111F7B8E2F002098F4 /* MASViewAttribute.m in Sources */,
