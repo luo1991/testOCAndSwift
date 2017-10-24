@@ -11,9 +11,6 @@
 		841663FD1F9D80DC0006B705 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841663FC1F9D80DC0006B705 /* InfoViewController.m */; };
 		841664041F9D81700006B705 /* PersonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 841664021F9D81700006B705 /* PersonTableViewCell.m */; };
 		841664051F9D81700006B705 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841664031F9D81700006B705 /* PersonTableViewCell.xib */; };
-		8416640E1F9DC8450006B705 /* DKNightVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8416640D1F9DC8440006B705 /* DKNightVersion.framework */; };
-		8416640F1F9DC8490006B705 /* DKNightVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8416640D1F9DC8440006B705 /* DKNightVersion.framework */; };
-		841664101F9DC8490006B705 /* DKNightVersion.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8416640D1F9DC8440006B705 /* DKNightVersion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		841E92F41F8B6CC700408D45 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841E92F11F8B6CC700408D45 /* 1.jpg */; };
 		841E92F51F8B6CC700408D45 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841E92F21F8B6CC700408D45 /* 3.jpg */; };
 		841E92F61F8B6CC700408D45 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841E92F31F8B6CC700408D45 /* 2.jpg */; };
@@ -33,6 +30,10 @@
 		8452F3141F7B8E2F002098F4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452F3091F7B8E2F002098F4 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		8452F3151F7B8E2F002098F4 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452F30B1F7B8E2F002098F4 /* View+MASAdditions.m */; };
 		8452F31A1F7BA42A002098F4 /* HdNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452F3191F7BA42A002098F4 /* HdNavigationController.m */; };
+		8460CF981F9DED2E00621ED0 /* DKNightVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8416640D1F9DC8440006B705 /* DKNightVersion.framework */; };
+		8460CF991F9DED2E00621ED0 /* DKNightVersion.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8416640D1F9DC8440006B705 /* DKNightVersion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8460CF9C1F9DEF4500621ED0 /* logovideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8460CF9B1F9DEF4500621ED0 /* logovideo.mp4 */; };
+		8460CF9E1F9DF1BC00621ED0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8460CF9D1F9DF1BB00621ED0 /* MediaPlayer.framework */; };
 		84886FD81F99902200A309E5 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84886FD71F99902200A309E5 /* PersonViewController.m */; };
 		84886FEB1F99C95E00A309E5 /* news_cur.png in Resources */ = {isa = PBXBuildFile; fileRef = 84886FE21F99C95E00A309E5 /* news_cur.png */; };
 		84886FEC1F99C95E00A309E5 /* news_cur@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84886FE31F99C95E00A309E5 /* news_cur@3x.png */; };
@@ -78,13 +79,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		841663FA1F9D7FB40006B705 /* Embed Frameworks */ = {
+		8460CF9A1F9DED2E00621ED0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				841664101F9DC8490006B705 /* DKNightVersion.framework in Embed Frameworks */,
+				8460CF991F9DED2E00621ED0 /* DKNightVersion.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +138,8 @@
 		8452F30C1F7B8E2F002098F4 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		8452F3181F7BA42A002098F4 /* HdNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HdNavigationController.h; sourceTree = "<group>"; };
 		8452F3191F7BA42A002098F4 /* HdNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HdNavigationController.m; sourceTree = "<group>"; };
+		8460CF9B1F9DEF4500621ED0 /* logovideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = logovideo.mp4; sourceTree = "<group>"; };
+		8460CF9D1F9DF1BB00621ED0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		84886FD61F99902200A309E5 /* PersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
 		84886FD71F99902200A309E5 /* PersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonViewController.m; sourceTree = "<group>"; };
 		84886FE21F99C95E00A309E5 /* news_cur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = news_cur.png; sourceTree = "<group>"; };
@@ -150,7 +153,6 @@
 		84886FEA1F99C95E00A309E5 /* index_cur@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "index_cur@3x.png"; sourceTree = "<group>"; };
 		84886FF41F99CAB300A309E5 /* tabbar_other.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_other.png; sourceTree = "<group>"; };
 		84886FF51F99CAB300A309E5 /* tabbar_person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_person.png; sourceTree = "<group>"; };
-		84886FFD1F99DC7800A309E5 /* DKColorTable.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = DKColorTable.txt; path = testhd/lib/DKNightVersion.framework/DKColorTable.txt; sourceTree = SOURCE_ROOT; };
 		84886FFE1F99DD7D00A309E5 /* DKColorTable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = DKColorTable.txt; path = lib/DKColorTable.txt; sourceTree = "<group>"; };
 		84A2A0841F7A57010003825D /* data.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = data.png; sourceTree = "<group>"; };
 		84A2A0851F7A57010003825D /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
@@ -216,8 +218,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8416640E1F9DC8450006B705 /* DKNightVersion.framework in Frameworks */,
-				8416640F1F9DC8490006B705 /* DKNightVersion.framework in Frameworks */,
+				8460CF9E1F9DF1BC00621ED0 /* MediaPlayer.framework in Frameworks */,
+				8460CF981F9DED2E00621ED0 /* DKNightVersion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,7 +237,6 @@
 		8411B7F41F8F451C00BBEC3E /* iCarousel */ = {
 			isa = PBXGroup;
 			children = (
-				84886FFD1F99DC7800A309E5 /* DKColorTable.txt */,
 				8411B7F51F8F451C00BBEC3E /* iCarousel.h */,
 				8411B7F61F8F451C00BBEC3E /* iCarousel.m */,
 			);
@@ -273,6 +274,7 @@
 		8416640A1F9DC7940006B705 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8460CF9D1F9DF1BB00621ED0 /* MediaPlayer.framework */,
 				8416640B1F9DC7950006B705 /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
@@ -385,6 +387,7 @@
 		84A2A0801F7A57010003825D /* image */ = {
 			isa = PBXGroup;
 			children = (
+				8460CF9B1F9DEF4500621ED0 /* logovideo.mp4 */,
 				84886FF41F99CAB300A309E5 /* tabbar_other.png */,
 				84886FF51F99CAB300A309E5 /* tabbar_person.png */,
 				84886FE61F99C95E00A309E5 /* index_cur.png */,
@@ -501,7 +504,7 @@
 				844942821F6F9B1F00D19F32 /* Sources */,
 				844942831F6F9B1F00D19F32 /* Frameworks */,
 				844942841F6F9B1F00D19F32 /* Resources */,
-				841663FA1F9D7FB40006B705 /* Embed Frameworks */,
+				8460CF9A1F9DED2E00621ED0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -563,6 +566,7 @@
 				84886FF71F99CAB300A309E5 /* tabbar_person.png in Resources */,
 				844942941F6F9B1F00D19F32 /* Main.storyboard in Resources */,
 				84886FF21F99C95E00A309E5 /* index_cur@2x.png in Resources */,
+				8460CF9C1F9DEF4500621ED0 /* logovideo.mp4 in Resources */,
 				84A2A08B1F7A57010003825D /* location.png in Resources */,
 				84FA5D2F1F79EFDD00A3F311 /* HdTableViewCell.xib in Resources */,
 				84886FFF1F99DD7D00A309E5 /* DKColorTable.txt in Resources */,
