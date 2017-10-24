@@ -29,22 +29,22 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-
-
-      // 1.添加所有子控制器
+    
+    
+    
+    // 1.添加所有子控制器
     [self setUpChildViewController];
     // 2.初始化UIScrollView
     [self setUpScrollView];
-
+    
     // 3.添加所有子控制器对应标题
-     [self setUpTitleLabel];
+    [self setUpTitleLabel];
     // 不想要添加
     self.automaticallyAdjustsScrollViewInsets = NO;
-
-
+    
+    
     // 2.添加所有子控制器对应标题
-
+    
     // Do any additional setup after loading the view.
 }
 // 初始化UIScrollView
@@ -59,10 +59,10 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
         make.height.mas_equalTo(44);
         make.left.mas_equalTo(self.view.mas_left);
     }];
-      self.titleScrollView.showsHorizontalScrollIndicator = NO;
+    self.titleScrollView.showsHorizontalScrollIndicator = NO;
     self.contextScrollView = [[UIScrollView alloc] init];
     [self.view addSubview:self.contextScrollView];
-
+    
     [self.contextScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(self.view.mas_width);
         make.bottom.mas_equalTo(self.view.mas_bottom);
@@ -76,7 +76,7 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     self.contextScrollView.bounces = NO;// 弹簧效果
     self.contextScrollView.showsHorizontalScrollIndicator = NO;
     self.contextScrollView.delegate = self;
-
+    
 }
 -(void)setUpTitleLabel{
     NSUInteger count = self.childViewControllers.count;
@@ -101,69 +101,69 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
             [self tapClick:tap];
         }
         [self.titleScrollView addSubview:label];
-
-
+        
+        
     }
 }
 
 -(void)setUpTitleCenter:(UILabel *)centerLabel{
-
+    
     CGFloat offsetX = centerLabel.center.x - MainWidth * 0.5;
-
+    
     if (offsetX <0) {
-      offsetX =0;
+        offsetX =0;
     }
-
+    
     CGFloat maxOffsetX = self.titleScrollView.contentSize.width-MainWidth;
-
+    
     if (offsetX > maxOffsetX) {
         offsetX = maxOffsetX;
     }
-   // 滚动标题滚动条
+    // 滚动标题滚动条
     [self.titleScrollView setContentOffset:CGPointMake(offsetX, 0) animated:NO];
-
+    
 }
 
 #pragma mark - UIScrollViewDelegate  一滚动就会调用
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat currenPage = scrollView.contentOffset.x/scrollView.bounds.size.width;
-
+    
     NSInteger leftIndex = currenPage;
     NSInteger rigtIndex = leftIndex+1;
     UILabel *leftLabel = self.titleArray[leftIndex];
-
+    
     UILabel *rightLabel;
     if (rigtIndex <self.titleArray.count-1) {
         rightLabel = self.titleArray[rigtIndex];
     }
     CGFloat rightScale = currenPage-leftIndex;
-    NSLog(@"rightScale--%f",rightScale);
-
+//    NSLog(@"rightScale--%f",rightScale);
+    
     CGFloat leftScale = 1-rightScale ;
-    NSLog(@"leftScale--%f",leftScale);
-
+//    NSLog(@"leftScale--%f",leftScale);
+    
     // 左边缩放
     leftLabel.transform = CGAffineTransformMakeScale(leftScale * 0.3 + 1, leftScale * 0.3+ 1);
-
+    
     // 右边缩放
     rightLabel.transform = CGAffineTransformMakeScale(rightScale * 0.3 + 1, rightScale * 0.3+ 1);
     
     if ([self.dk_manager.themeVersion isEqualToString:DKThemeVersionNight]) {
         leftLabel.textColor = [UIColor colorWithRed:leftScale green:0 blue:0 alpha:1];
         rightLabel.textColor = [UIColor colorWithRed:rightScale green:1 blue:1 alpha:1];
-        NSLog(@"night");
+//        NSLog(@"night");
     }else{
         leftLabel.textColor = [UIColor colorWithRed:leftScale green:0 blue:0 alpha:1];
         rightLabel.textColor = [UIColor colorWithRed:rightScale green:0 blue:0 alpha:1];
-         NSLog(@"moon");
+//        NSLog(@"moon");
     }
     
-   
     
-
-
-//    NSLog(@"%f",currenPage);
+    
+    
+    
+    //    NSLog(@"%f",currenPage);
 }
 
 #pragma mark - 结束滚动 需要做的事情
@@ -175,7 +175,7 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     UILabel *selLabel = self.titleArray[index];
     [self selectLabel:selLabel];
     [self setUpTitleCenter:selLabel];
-
+    
 }
 -(void)showVc:(NSInteger)index{
     CGFloat offsetX = index*MainWidth;
@@ -183,11 +183,11 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     if (vc.isViewLoaded) {
         return;
     }
-
+    
     [self.contextScrollView addSubview:vc.view];
-//
+    //
     vc.view.frame = CGRectMake(offsetX, 0, MainWidth, MainHeight);
-
+    
 }
 -(void)selectLabel:(UILabel *)label{
     _titleLabel.highlighted = NO;
@@ -212,16 +212,16 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     KVOViewController *kvoVC = [[KVOViewController alloc] init];
     kvoVC.title = @"热点";
     [self addChildViewController:kvoVC];
-
+    
     ReadViewController *readerVC = [[ReadViewController alloc] init];
     readerVC.title = @"阅读";
     [self addChildViewController:readerVC];
-
+    
     ScienceViewController *scienceVC = [[ScienceViewController alloc] init];
     scienceVC.title= @"科技";
     [self addChildViewController:scienceVC];
-
-
+    
+    
 }
 -(void)tapClick:(UITapGestureRecognizer *)tap{
     UILabel *selLabel =(UILabel *)tap.view;
@@ -231,7 +231,7 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     self.contextScrollView.contentOffset= CGPointMake(offsetX, 0);
     [self showVc:index];
     [self setUpTitleCenter:selLabel];
-
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -251,13 +251,13 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

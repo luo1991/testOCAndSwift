@@ -28,6 +28,8 @@
    
     TestViewController  *HomeViewController= [[TestViewController alloc] init];
     [self addChildViewController:HomeViewController andTitle:@"首页" andNormalImage:@"index" andSelectImage:@"index_cur.png"];
+    
+    
     OtherViewController *otherVC = [[OtherViewController alloc] init];
     [self addChildViewController:otherVC andTitle:@"其他" andNormalImage:@"index" andSelectImage:@"news_cur"];
     InfoViewController *infoVC = [[InfoViewController alloc] init];
