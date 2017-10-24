@@ -24,6 +24,8 @@
 @property (nonatomic, strong)  iCarousel *carousel;
 
 @property(nonatomic,strong)UIPageControl* myPageControl ;
+
+@property(nonatomic,strong)MPMoviePlayerController *playerVC;
 @end
 
 
@@ -151,7 +153,44 @@
 //    [button addTarget:self action:@selector(btnMethod) forControlEvents:UIControlEventTouchUpInside];
     
    
-
+    //    获得视频播放的URL(本地)
+    NSString* moviePath=[[NSBundle mainBundle]pathForResource:@"logovideo" ofType:@"mp4"];
+    NSURL *videoUrl = [NSURL fileURLWithPath:moviePath];
+    self.playerVC = [[MPMoviePlayerController alloc] initWithContentURL:videoUrl];
+   
+    //    播放本地视频时需要这句
+    self.playerVC.movieSourceType = MPMovieSourceTypeFile;
+    self.playerVC.shouldAutoplay = YES;// 是否自动播放
+    self.playerVC.scalingMode = MPMovieScalingModeAspectFill;
+    self.playerVC.controlStyle = MPMovieControlStyleDefault;
+    
+    //    self.playerVC.controlStyle=MPMovieSourceTypeStreaming;//直播
+    
+    [self.view addSubview:self.playerVC.view];
+    
+    [self.playerVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.carousel.mas_bottom).with.offset(20);
+        make.size.mas_equalTo(CGSizeMake(MainWidth, MainWidth*9/16));
+        make.centerX.mas_equalTo(self.view);
+    }];
+    
+    [self.playerVC prepareToPlay]; // 缓存
+    [self.playerVC play];// 可加 可不加
+    
+    //监听当前视频播放状态
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loadStateDidChange:) name:MPMoviePlayerLoadStateDidChangeNotification object:nil];
+    
+    
+    //监听视频播放结束
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(endPlay:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+    
+    //全屏播放
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(enterFullscreen) name:MPMoviePlayerWillEnterFullscreenNotification object:nil];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(willExitFullScreen) name:MPMoviePlayerDidExitFullscreenNotification object:nil];
+    
+    
     
     
     
@@ -322,9 +361,77 @@
 
 
 
+-(void)endPlay:(NSNotification *)notification
+{
+    NSLog(@"播放结束");
+    // 1.视频播放对象
+    //    MPMoviePlayerController* theVideo = [notification object];
+    //    // 2.销毁播放通知
+    //    [[NSNotificationCenter defaultCenter] removeObserver:self
+    //                                                   name:MPMoviePlayerPlaybackDidFinishNotification
+    //                                                 object:theVideo];
+    //    // 播放结束移除视频对象（非arc记得release！！）
+    //    [theVideo.view removeFromSuperview];
+    //
+    
+}
+
+-(void)loadStateDidChange:(NSNotification*)sender
+{
+    switch (self.playerVC.loadState) {
+        case MPMovieLoadStatePlayable:
+        {
+            NSLog(@"加载完成,可以播放");
+        }
+            break;
+        case MPMovieLoadStatePlaythroughOK:
+        {
+            NSLog(@"缓冲完成，可以连续播放");
+        }
+            break;
+        case MPMovieLoadStateStalled:
+        {
+            NSLog(@"缓冲中");
+        }
+            break;
+        case MPMovieLoadStateUnknown:
+        {
+            NSLog(@"未知状态");
+        }
+            break;
+        default:
+            break;
+    }
+}
+- (void)finishedPlayBtn {
+    [self.playerVC stop];
+    
+    [self.playerVC.view removeFromSuperview];
+    
+    
+}
+
+-(void)enterFullscreen{
+    NSLog(@"进入全屏");
+    //    if (self.view.width < self.view.height) {
+    //        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeRight] forKey:@"orientation"];
+    //    } else {
+    //        [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
+    //    }
+    //    CGAffineTransform landscapeTransform =CGAffineTransformMakeRotation(M_PI_2);
+    //    self.playerVC.view.transform = landscapeTransform;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)willExitFullScreen
+{
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    //    CGAffineTransform landscapeTransform =CGAffineTransformMakeRotation(M_PI *2);
+    //    self.playerVC.view.transform = landscapeTransform;
+    self.playerVC.fullscreen =NO;
 }
 
 /*
