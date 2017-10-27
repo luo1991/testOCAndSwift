@@ -9,7 +9,7 @@ target 'testhd' do
 pod 'AFNetworking' 
 pod 'SDWebImage'
 pod 'Masonry'
-pod "DKNightVersion", "~> 0.4.5"
+#pod "DKNightVersion", "~> 0.4.5"
 
 
 
