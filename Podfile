@@ -1,5 +1,11 @@
-platform :ios, '7.0' 
+platform :ios, '7.0'
+inhibit_all_warnings!
+##########LocalPod##########
+target 'testhd' do
 
-xcodeproj ‘testOCAndSwift/testhd.xcodeproj‘   
+#zip解压
+#pod 'ZipArchive'
+#网络请求
+pod 'AFNetworking' 
 
-pod 'MBProgressHUD', '~> 0.8'
+end
