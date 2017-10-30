@@ -54,7 +54,7 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     self.titleScrollView.dk_backgroundColorPicker = DKColorPickerWithKey(BG);
     [self.view addSubview:self.titleScrollView];
     [self.titleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(self.view.mas_width);
+        make.width.mas_equalTo(self.view.mas_width);
         make.top.mas_equalTo(0);
         make.height.mas_equalTo(44);
         make.left.mas_equalTo(self.view.mas_left);
@@ -64,7 +64,7 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     [self.view addSubview:self.contextScrollView];
     
     [self.contextScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(self.view.mas_width);
+        make.width.mas_equalTo(self.view.mas_width);
         make.bottom.mas_equalTo(self.view.mas_bottom);
         make.top.mas_equalTo(self.titleScrollView.mas_bottom);
         make.left.mas_equalTo(self.view.mas_left);

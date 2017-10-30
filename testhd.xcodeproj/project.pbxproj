@@ -17,6 +17,8 @@
 		841E92F61F8B6CC700408D45 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 841E92F31F8B6CC700408D45 /* 2.jpg */; };
 		8424A4641F7A42D0000B759E /* hdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424A4631F7A42D0000B759E /* hdViewController.swift */; };
 		8424A4661F7A4307000B759E /* hdtest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424A4651F7A4307000B759E /* hdtest.swift */; };
+		84356E701FA6F05700EB0EE1 /* DKNightVersion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84356E6E1FA6EFB500EB0EE1 /* DKNightVersion.framework */; };
+		84356E711FA6F05700EB0EE1 /* DKNightVersion.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84356E6E1FA6EFB500EB0EE1 /* DKNightVersion.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8449428B1F6F9B1F00D19F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8449428A1F6F9B1F00D19F32 /* main.m */; };
 		844942941F6F9B1F00D19F32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844942921F6F9B1F00D19F32 /* Main.storyboard */; };
 		844942961F6F9B1F00D19F32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844942951F6F9B1F00D19F32 /* Assets.xcassets */; };
@@ -41,7 +43,6 @@
 		84A2A08B1F7A57010003825D /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2A0851F7A57010003825D /* location.png */; };
 		84A2A08C1F7A57010003825D /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A2A0861F7A57010003825D /* write.png */; };
 		84AD05171F94917C00117033 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD05161F94917C00117033 /* KVOViewController.m */; };
-		84B31B771FA30A4400751CB0 /* DKNightVersion 13-55-57-132.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B31B761FA30A4400751CB0 /* DKNightVersion 13-55-57-132.framework */; };
 		84C25E751F9846A40001D8C2 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C25E741F9846A40001D8C2 /* ReadViewController.m */; };
 		84C25E781F9846C90001D8C2 /* ScienceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C25E771F9846C90001D8C2 /* ScienceViewController.m */; };
 		84F4CC1B1F95AF8500C77A9B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4CC1A1F95AF8500C77A9B /* TestViewController.m */; };
@@ -60,6 +61,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				84356E711FA6F05700EB0EE1 /* DKNightVersion.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +84,7 @@
 		841E92F31F8B6CC700408D45 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		8424A4631F7A42D0000B759E /* hdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hdViewController.swift; sourceTree = "<group>"; };
 		8424A4651F7A4307000B759E /* hdtest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = hdtest.swift; path = ../../hdtest.swift; sourceTree = "<group>"; };
+		84356E6E1FA6EFB500EB0EE1 /* DKNightVersion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DKNightVersion.framework; path = testhd/lib/DKNightVersion.framework; sourceTree = SOURCE_ROOT; };
 		844942861F6F9B1F00D19F32 /* testhd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testhd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8449428A1F6F9B1F00D19F32 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		844942931F6F9B1F00D19F32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,7 +115,6 @@
 		84AD05151F94917C00117033 /* KVOViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVOViewController.h; sourceTree = "<group>"; };
 		84AD05161F94917C00117033 /* KVOViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KVOViewController.m; sourceTree = "<group>"; };
 		84AD05191F94946100117033 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		84B31B761FA30A4400751CB0 /* DKNightVersion 13-55-57-132.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "DKNightVersion 13-55-57-132.framework"; path = "testhd/lib/DKNightVersion 13-55-57-132.framework"; sourceTree = SOURCE_ROOT; };
 		84C25E731F9846A40001D8C2 /* ReadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadViewController.h; sourceTree = "<group>"; };
 		84C25E741F9846A40001D8C2 /* ReadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		84C25E761F9846C90001D8C2 /* ScienceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScienceViewController.h; sourceTree = "<group>"; };
@@ -139,7 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84B31B771FA30A4400751CB0 /* DKNightVersion 13-55-57-132.framework in Frameworks */,
+				84356E701FA6F05700EB0EE1 /* DKNightVersion.framework in Frameworks */,
 				8460CF9E1F9DF1BC00621ED0 /* MediaPlayer.framework in Frameworks */,
 				15795F98DFF1CD234A9076FB /* libPods-testhd.a in Frameworks */,
 			);
@@ -151,7 +153,7 @@
 		8411B7F31F8F451C00BBEC3E /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				84B31B761FA30A4400751CB0 /* DKNightVersion 13-55-57-132.framework */,
+				84356E6E1FA6EFB500EB0EE1 /* DKNightVersion.framework */,
 				84886FFE1F99DD7D00A309E5 /* DKColorTable.txt */,
 				8411B7F41F8F451C00BBEC3E /* iCarousel */,
 			);
@@ -574,6 +576,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PODS_ROOT)";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -614,6 +617,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PODS_ROOT)";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
@@ -637,6 +641,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/testhd/lib",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
 				INFOPLIST_FILE = testhd/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -649,6 +660,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/luomacmini/Desktop/testhd/testOCAndSwift/testhd/Other/testhd-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -666,6 +678,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/testhd/lib",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AFNetworking\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+				);
 				INFOPLIST_FILE = testhd/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -677,6 +696,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = test_dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/luomacmini/Desktop/testhd/testOCAndSwift/testhd/Other/testhd-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};
