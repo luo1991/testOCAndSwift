@@ -8,7 +8,6 @@
 
 #import "InfoViewController.h"
 #import "PersonTableViewCell.h"
-
 @interface InfoViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,strong)NSArray *dataArray;
 @property(nonatomic,strong)UITableView *infoTableView;

@@ -32,7 +32,6 @@ typedef NS_ENUM(NSInteger, BluetoothFailState){
 
 #import <CoreBluetooth/CoreBluetooth.h>
 
-
 @interface ReadViewController ()<CBCentralManagerDelegate,CBPeripheralDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (strong , nonatomic) CBCentralManager *manager;//中央设备
 

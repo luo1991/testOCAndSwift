@@ -7,9 +7,6 @@
 //
 
 #import "PersonViewController.h"
-//#import <DKNightVersion/DKNightVersion.h>
-
-
 
 @interface PersonViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property(nonatomic,strong)NSArray *dataArray;

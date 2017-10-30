@@ -12,6 +12,7 @@
 #import "ViewController.h"
 #import "ReadViewController.h"
 #import "ScienceViewController.h"
+#import "Masonry.h"
 #define KscreenWidth [UIScreen mainScreen].bounds.size.width
 
 #define KscreenHeight [UIScreen mainScreen].bounds.size.height
@@ -54,11 +55,12 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     self.titleScrollView.dk_backgroundColorPicker = DKColorPickerWithKey(BG);
     [self.view addSubview:self.titleScrollView];
     [self.titleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(self.view.mas_width);
+        make.width.equalTo(self.view.mas_width);
         make.top.mas_equalTo(0);
         make.height.mas_equalTo(44);
-        make.left.mas_equalTo(self.view.mas_left);
+        make.left.equalTo(self.view.mas_left);
     }];
+
     self.titleScrollView.showsHorizontalScrollIndicator = NO;
     self.contextScrollView = [[UIScrollView alloc] init];
     [self.view addSubview:self.contextScrollView];
