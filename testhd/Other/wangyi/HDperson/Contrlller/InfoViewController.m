@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.dataArray= @[@"个人信息",@"通讯录",@"我的考勤",@"我的单据",@"我的审批",@"修改密码",@"考勤说明",];
-    self.infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MainWidth, MainHeight-64) style:UITableViewStylePlain];
+    self.infoTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MainWidth, MainHeight-64-44-49) style:UITableViewStylePlain];
     [self.view addSubview:self.infoTableView];
     
     self.infoTableView.delegate = self;
@@ -35,7 +35,7 @@
 }
 
 -(UIView *)setUPHeaderView{
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MainWidth, HDValueFor6P6Default(130, 120, 100))];
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MainWidth, HDValueFor6P6Default(120, 110, 100))];
     headView.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.7];
     // 头像
     UIImageView *headImage = [[UIImageView alloc] init];
@@ -43,7 +43,7 @@
     [headImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(20);
         make.size.mas_equalTo(CGSizeMake(60, 60));
-        make.top.mas_equalTo(HDValueFor6P6Default(40, 30, 20));
+        make.top.mas_equalTo(HDValueFor6P6Default(30, 15, 10));
     }];
     headImage.layer.cornerRadius= 30;
     headImage.layer.masksToBounds = YES;
