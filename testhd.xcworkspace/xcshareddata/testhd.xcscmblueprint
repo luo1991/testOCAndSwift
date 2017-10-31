@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7806245251F59577BBF3F02B0F7329DF3B8B1DDB+++B7FAE09",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7806245251F59577BBF3F02B0F7329DF3B8B1DDB+++5C57676" : 0,
+    "7806245251F59577BBF3F02B0F7329DF3B8B1DDB+++7475B57" : 0,
+    "7806245251F59577BBF3F02B0F7329DF3B8B1DDB+++B7FAE09" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A1B588E3-0073-42BF-A5DB-88F731EFA23C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7806245251F59577BBF3F02B0F7329DF3B8B1DDB+++5C57676" : "",
+    "7806245251F59577BBF3F02B0F7329DF3B8B1DDB+++7475B57" : "",
+    "7806245251F59577BBF3F02B0F7329DF3B8B1DDB+++B7FAE09" : "testOCAndSwift\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "testhd",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "testhd.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/luo1991\/testOCAndSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7806245251F59577BBF3F02B0F7329DF3B8B1DDB+++5C57676"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/luo1991\/testOCAndSwift",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7806245251F59577BBF3F02B0F7329DF3B8B1DDB+++7475B57"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/luo1991\/testOCAndSwift",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7806245251F59577BBF3F02B0F7329DF3B8B1DDB+++B7FAE09"
+    }
+  ]
+}
