@@ -25,6 +25,8 @@
 #import <DKNightVersion/DKNightVersion.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import "UIImageView+WebCache.h"
+#import "SVProgressHUD.h"
+#import "MBProgressHUD.h"
 
 
 #define  MainHeight  [[UIScreen mainScreen] bounds].size.height

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HotViewController : UIViewController
+@interface HotViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout>
+@property(nonatomic,strong)UICollectionView *collectionView;
 
 @end
