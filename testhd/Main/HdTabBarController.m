@@ -13,7 +13,7 @@
 #import "TestViewController.h"
 #import "PersonViewController.h"
 #import "InfoViewController.h"
-
+#import "HotViewController.h"
 @interface HdTabBarController ()
 
 @end
@@ -28,12 +28,12 @@
    
     TestViewController  *HomeViewController= [[TestViewController alloc] init];
     [self addChildViewController:HomeViewController andTitle:@"首页" andNormalImage:@"index" andSelectImage:@"index_cur.png"];
-    
+    HotViewController *hotVC = [[HotViewController alloc] init];
+    [self addChildViewController:hotVC andTitle:@"消息" andNormalImage:@"index" andSelectImage:@"news_cur"];
     
     OtherViewController *otherVC = [[OtherViewController alloc] init];
     [self addChildViewController:otherVC andTitle:@"其他" andNormalImage:@"index" andSelectImage:@"news_cur"];
-    InfoViewController *infoVC = [[InfoViewController alloc] init];
-    [self addChildViewController:infoVC andTitle:@"个人中心" andNormalImage:@"index" andSelectImage:@"news_cur"];
+   
     PersonViewController *personVC = [[PersonViewController alloc] init];
     [self addChildViewController:personVC andTitle:@"我的" andNormalImage:@"index" andSelectImage:nil];
     

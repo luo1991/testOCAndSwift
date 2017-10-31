@@ -55,6 +55,8 @@
 		84AD05171F94917C00117033 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD05161F94917C00117033 /* KVOViewController.m */; };
 		84C25E751F9846A40001D8C2 /* ReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C25E741F9846A40001D8C2 /* ReadViewController.m */; };
 		84C25E781F9846C90001D8C2 /* ScienceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C25E771F9846C90001D8C2 /* ScienceViewController.m */; };
+		84D570AD1FA80B4A00BCE018 /* WaterfallCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D570AC1FA80B4A00BCE018 /* WaterfallCollectionViewCell.m */; };
+		84D570AF1FA8138D00BCE018 /* cat1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84D570AE1FA8138C00BCE018 /* cat1.jpg */; };
 		84F4CC1B1F95AF8500C77A9B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F4CC1A1F95AF8500C77A9B /* TestViewController.m */; };
 		84FA5D2C1F79EFDD00A3F311 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA5D211F79EFDD00A3F311 /* AppDelegate.m */; };
 		84FA5D2D1F79EFDD00A3F311 /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA5D241F79EFDD00A3F311 /* OtherViewController.m */; };
@@ -154,6 +156,9 @@
 		84C25E741F9846A40001D8C2 /* ReadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadViewController.m; sourceTree = "<group>"; };
 		84C25E761F9846C90001D8C2 /* ScienceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScienceViewController.h; sourceTree = "<group>"; };
 		84C25E771F9846C90001D8C2 /* ScienceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScienceViewController.m; sourceTree = "<group>"; };
+		84D570AB1FA80B4A00BCE018 /* WaterfallCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterfallCollectionViewCell.h; sourceTree = "<group>"; };
+		84D570AC1FA80B4A00BCE018 /* WaterfallCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterfallCollectionViewCell.m; sourceTree = "<group>"; };
+		84D570AE1FA8138C00BCE018 /* cat1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat1.jpg; sourceTree = "<group>"; };
 		84F4CC191F95AF8500C77A9B /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		84F4CC1A1F95AF8500C77A9B /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		84FA5D201F79EFDD00A3F311 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -359,6 +364,7 @@
 			children = (
 				84356EAF1FA72F4000EB0EE1 /* HotViewController.h */,
 				84356EB01FA72F4000EB0EE1 /* HotViewController.m */,
+				84D570AA1FA80B0D00BCE018 /* WaterfallCell */,
 			);
 			path = hot;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 		84A2A0801F7A57010003825D /* image */ = {
 			isa = PBXGroup;
 			children = (
+				84D570AE1FA8138C00BCE018 /* cat1.jpg */,
 				8460CF9B1F9DEF4500621ED0 /* logovideo.mp4 */,
 				84886FF41F99CAB300A309E5 /* tabbar_other.png */,
 				84886FF51F99CAB300A309E5 /* tabbar_person.png */,
@@ -386,6 +393,15 @@
 				84A2A0861F7A57010003825D /* write.png */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		84D570AA1FA80B0D00BCE018 /* WaterfallCell */ = {
+			isa = PBXGroup;
+			children = (
+				84D570AB1FA80B4A00BCE018 /* WaterfallCollectionViewCell.h */,
+				84D570AC1FA80B4A00BCE018 /* WaterfallCollectionViewCell.m */,
+			);
+			path = WaterfallCell;
 			sourceTree = "<group>";
 		};
 		84FA5D1F1F79EFDD00A3F311 /* Main */ = {
@@ -520,6 +536,7 @@
 				8460CF9C1F9DEF4500621ED0 /* logovideo.mp4 in Resources */,
 				84A2A08B1F7A57010003825D /* location.png in Resources */,
 				84FA5D2F1F79EFDD00A3F311 /* HdTableViewCell.xib in Resources */,
+				84D570AF1FA8138D00BCE018 /* cat1.jpg in Resources */,
 				841664051F9D81700006B705 /* PersonTableViewCell.xib in Resources */,
 				841E92F41F8B6CC700408D45 /* 1.jpg in Resources */,
 				84886FEB1F99C95E00A309E5 /* news_cur.png in Resources */,
@@ -618,6 +635,7 @@
 				8452F31A1F7BA42A002098F4 /* HdNavigationController.m in Sources */,
 				84356EA91FA70BD500EB0EE1 /* NSArray+MASAdditions.m in Sources */,
 				84FA5D331F79F03200A3F311 /* HdTabBarController.m in Sources */,
+				84D570AD1FA80B4A00BCE018 /* WaterfallCollectionViewCell.m in Sources */,
 				84C25E751F9846A40001D8C2 /* ReadViewController.m in Sources */,
 				841664041F9D81700006B705 /* PersonTableViewCell.m in Sources */,
 			);
@@ -743,6 +761,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8SHBHSU2F5;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -784,6 +803,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8SHBHSU2F5;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
