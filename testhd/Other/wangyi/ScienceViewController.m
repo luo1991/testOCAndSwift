@@ -19,8 +19,21 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
 
-   
-
+////    [SVProgressHUD show];
+//    [SVProgressHUD showWithStatus:@"注册成功"];
+//    sleep(2);
+//    [SVProgressHUD dismiss];
+//     [SVProgressHUD showErrorWithStatus:@"注册成功"];
+    
+//    sleep(2);
+     [SVProgressHUD showErrorWithStatus:@"注册失败"];
+//    sleep(3);
+//    [SVProgressHUD showImage:[UIImage imageNamed:@"2.jpg"] status:@"欢迎回来"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+    });
+    
+    
     
     // Do any additional setup after loading the view.
 }
