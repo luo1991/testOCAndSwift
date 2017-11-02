@@ -30,12 +30,13 @@
     self.infoTableView.tableHeaderView = [self setUPHeaderView];
     self.infoTableView.tableFooterView= [self setUpFooterView];
     
-    
+   
     // Do any additional setup after loading the view.
 }
 
 -(UIView *)setUPHeaderView{
     UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MainWidth, HDValueFor6P6Default(120, 110, 100))];
+//    headView.translatesAutoresizingMaskIntoConstraints = NO;
     headView.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.7];
     // 头像
     UIImageView *headImage = [[UIImageView alloc] init];
@@ -59,7 +60,7 @@
         make.size.mas_equalTo(CGSizeMake(70, 30));
         make.top.mas_equalTo(headImage.mas_top);
     }];
-    nameLabel.text=@"范晓磊";
+    nameLabel.text=@"范文增";
     nameLabel.font = [UIFont systemFontOfSize:20];
     nameLabel.textColor= [UIColor whiteColor];
     nameLabel.textAlignment = NSTextAlignmentLeft;
@@ -71,7 +72,7 @@
         make.size.mas_equalTo(CGSizeMake(70, 30));
         make.top.equalTo(headImage.mas_top);
     }];
-    companyLabel.text=@"欢动科技";
+    companyLabel.text=@"**科技";
     companyLabel.textColor= [UIColor whiteColor];
     companyLabel.textAlignment = NSTextAlignmentLeft;
 
@@ -104,6 +105,7 @@
 
 -(UIView *)setUpFooterView{
     UIView  *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MainWidth, 80)];
+//    footerView.translatesAutoresizingMaskIntoConstraints = NO;
     UIButton *logoutBtn = [[UIButton alloc] init];
     [footerView addSubview:logoutBtn];
     [logoutBtn mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -20,70 +20,63 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor grayColor];
-    self.number = 0 ;
-    NSLog(@"hjfljsdk");
-    //KVO （键值监听） Key-Value Observing
-    // KVO 的实现依赖于OC强大的Runtime，
-    // 原理：当观察某对象A时，KVO机制动态创建一个对象A当前类的子类，并为这个新的子类重写了被观察属性keyPath的setter方法。setter 方法随后负责通知观察对象属性的改变状况。
+       self.view.backgroundColor = [UIColor grayColor];
+    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"文字点击     YYText"];
+    text.yy_font = [UIFont boldSystemFontOfSize:18.0f];
+    text.yy_color = [UIColor blueColor];
+    [text yy_setColor:[UIColor redColor] range:NSMakeRange(0, 4)];
     
     
-    //    KVC（键值编码） 即 Key-Value Coding
     
-    self.kvoVC = [[KVOViewController alloc] init];
-    /*1.注册对象myKVO为被观察者: option中，
-     NSKeyValueObservingOptionOld 以字典的形式提供 “初始对象数据”;
-     NSKeyValueObservingOptionNew 以字典的形式提供 “更新后新的数据”; */
-//   [ self.kvoVC addObserver:self forKeyPath:@"kvovc" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    [text yy_setTextHighlightRange:NSMakeRange(0, 4)//设置点击的位置
+                             color:[UIColor orangeColor]
+                   backgroundColor:[UIColor whiteColor]
+                         tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+                             NSLog(@"这里是点击事件");
+                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"文字点击效果" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil];
+                             [alert show];
+                             
+                         }];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.view addSubview:button];
-    [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.mas_equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(100, 100));
+    YYLabel *heightRangeLabel = [YYLabel new];
+//    heightRangeLabel.frame = CGRectMake(100, 250, 160, 25);
+    heightRangeLabel.attributedText = text;
+    heightRangeLabel.userInteractionEnabled = YES;
+    heightRangeLabel.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:heightRangeLabel];
+
+    [heightRangeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(MainWidth,40));
+        make.top.mas_equalTo(40);
     }];
-    [button setTitle:@"点击" forState:UIControlStateNormal];
-     [button setTitleColor: [UIColor redColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(btnMethod) forControlEvents:UIControlEventTouchUpInside];
-    self.contextLabel = [[UILabel alloc] init];
-    [self.view addSubview:self.contextLabel];
-    [self.contextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(button);
-        make.size.equalTo(button);
-        make.top.equalTo(self.view.mas_top);
+ 
+    NSMutableAttributedString *textSubstring = [[NSMutableAttributedString alloc] initWithString:@"对这个世界如果你有太多的抱怨"];
+    textSubstring.yy_font = [UIFont boldSystemFontOfSize:20];//字体
+    textSubstring.yy_lineSpacing = 20;//行间距
+    
+    NSRange range0 = [[textSubstring string] rangeOfString:@"这个世界" options:NSCaseInsensitiveSearch];
+    //字体
+    [textSubstring yy_setFont:[UIFont systemFontOfSize:25] range:range0];
+    //文字颜色
+    [textSubstring yy_setColor:[UIColor purpleColor] range:range0];
+    //文字间距
+    [textSubstring yy_setKern:@(2) range:range0];
+    
+    YYLabel *subLabel = [[YYLabel alloc] init];
+    [self.view addSubview:subLabel];
+    [subLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(MainWidth, 40));
+        make.top.mas_equalTo(heightRangeLabel.mas_bottom);
     }];
     
-    self.contextLabel.textColor = [UIColor blueColor];
-     self.contextLabel.backgroundColor = [UIColor yellowColor];
+     subLabel.attributedText = textSubstring;
     
-    // Do any additional setup after loading the view.
-}
--(void)btnMethod{
-    NSLog(@"点击");
-//    TestViewController *test = [[TestViewController alloc] init];
-//    [self presentViewController:test animated:YES completion:nil];
-    
-    self.kvoVC.number = self.kvoVC.number+1;
     
 }
-/* 2.只要object的keyPath属性发生变化，就会调用此回调方法，进行相应的处理：UI更新：*/
-//-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-//    
-//    NSLog(@"kvovc");
-//    
-//    if ([keyPath isEqualToString:@"kvovc"]&&object == self.kvoVC) {
-//        self.contextLabel.text = [NSString stringWithFormat:@"当前kvovc值为%@",[change valueForKey:@"new"]];
-//        
-//        //change的使用：上文注册时，枚举为2个，因此可以提取change字典中的新、旧值的这两个方法
-//        NSLog(@"oldnum:%@   newnum:%@",[change valueForKey:@"old"],[change valueForKey:@"new"]);
-//        
-//    }
-//}
--(void)dealloc{
-    /* 3.移除KVO */
-//
-}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 //    [self removeObserver:self forKeyPath:@"kvovc" context:nil];

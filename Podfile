@@ -16,6 +16,8 @@ pod 'MBProgressHUD'
 pod 'SVProgressHUD'
 #环信sdk集成
 pod 'Hyphenate_CN'
+pod 'YYText'
+pod 'MJExtension'
 #瀑布流布局
 pod 'CHTCollectionViewWaterfallLayout'
 #pod 'Masonry'

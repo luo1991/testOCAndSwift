@@ -28,6 +28,11 @@
 #import "SVProgressHUD.h"
 #import "MBProgressHUD.h"
 
+#import <YYText/YYText.h>
+#import <YYText/YYLabel.h>
+
+#import "MJRefresh.h"
+
 
 #define  MainHeight  [[UIScreen mainScreen] bounds].size.height
 #define MainWidth    [[UIScreen mainScreen] bounds].size.width

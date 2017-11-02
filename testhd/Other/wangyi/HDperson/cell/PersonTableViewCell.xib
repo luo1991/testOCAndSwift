@@ -20,26 +20,27 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_person.png" translatesAutoresizingMaskIntoConstraints="NO" id="TwI-4O-Zye">
-                        <rect key="frame" x="18" y="18.5" width="40" height="22"/>
+                        <rect key="frame" x="25" y="10" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="1HD-fV-ZjY"/>
-                            <constraint firstAttribute="height" constant="22" id="GGT-fe-J9V"/>
+                            <constraint firstAttribute="width" constant="40" id="Fmb-o3-Ws3"/>
+                            <constraint firstAttribute="height" constant="40" id="eyi-Cs-c1v"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhF-HD-DLz">
-                        <rect key="frame" x="68" y="18.5" width="245" height="22"/>
+                        <rect key="frame" x="75" y="8" width="150" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="k82-O8-kAa"/>
+                            <constraint firstAttribute="width" constant="150" id="tDM-KZ-YoD"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="RhF-HD-DLz" firstAttribute="leading" secondItem="TwI-4O-Zye" secondAttribute="trailing" constant="10" id="3Sr-Yz-hy6"/>
-                    <constraint firstItem="RhF-HD-DLz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="KLt-gg-8s0"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="TwI-4O-Zye" secondAttribute="bottom" constant="10" id="OLc-ko-ueB"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="RhF-HD-DLz" secondAttribute="bottom" constant="10" id="Ozt-Zw-Kuq"/>
-                    <constraint firstItem="TwI-4O-Zye" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="kg7-kK-90U"/>
-                    <constraint firstItem="TwI-4O-Zye" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="svy-mn-pMn"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="RhF-HD-DLz" secondAttribute="trailing" constant="10" id="yae-uz-iV0"/>
+                    <constraint firstItem="TwI-4O-Zye" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="QYa-cs-Lq7"/>
+                    <constraint firstItem="RhF-HD-DLz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="h3G-NK-09z"/>
+                    <constraint firstItem="RhF-HD-DLz" firstAttribute="leading" secondItem="TwI-4O-Zye" secondAttribute="trailing" constant="10" id="h9J-Ua-nMf"/>
+                    <constraint firstItem="TwI-4O-Zye" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hlH-9I-zNZ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

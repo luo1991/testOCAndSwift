@@ -10,6 +10,9 @@
 #import "HdTableViewCell.h"
 #import "testhd-Bridging-Header.h"
 
+static const CGFloat MJDuration = 2.0;
+
+
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong)UITableView *tableView;
 
@@ -40,10 +43,80 @@
     
     self.detailArray = @[@"shot",@"Aduahguhauhguhaudghuahguhudhauhg",@"dhuahgudhaughuahdughuahguhauhguhdahudhuahughduahguhadguhaduhguadhughduahguahguhadugh"];
     
-//    [self.tableView registerClass:[HdTableViewCell class] forCellReuseIdentifier:@"hdcell"];
+
     [self.tableView registerNib:[UINib nibWithNibName:@"HdTableViewCell" bundle:nil] forCellReuseIdentifier:@"hdcell"];
     
+ //方式1
+     __weak __typeof(self) weakSelf = self;
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [weakSelf loadNewData];
+    }];
+
+//
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf loadMoreData];
+    }];
+   
+//
+    return;
+//    自定义文字
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     
+    // 设置文字
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"Release to refresh" forState:MJRefreshStatePulling];
+    [header setTitle:@"加载中 ..." forState:MJRefreshStateRefreshing];
+    
+    // 设置字体
+    header.stateLabel.font = [UIFont systemFontOfSize:15];
+    header.lastUpdatedTimeLabel.font = [UIFont systemFontOfSize:14];
+    
+    // 设置颜色
+    header.stateLabel.textColor = [UIColor redColor];
+    header.lastUpdatedTimeLabel.textColor = [UIColor blueColor];
+    
+    // 马上进入刷新状态
+//    [header beginRefreshing];
+    
+    // 设置刷新控件
+    self.tableView.mj_header = header;
+    
+        // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+        self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+            [weakSelf loadMoreData];
+        }];
+        // 马上进入刷新状态
+    
+//        [self.tableView.mj_header beginRefreshing];
+    
+    
+}
+#pragma mark 下拉加载
+-(void)loadNewData{
+    // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
+    __weak UITableView *tableView = self.tableView;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [tableView reloadData];
+        
+        // 拿到当前的下拉刷新控件，结束刷新状态
+        [tableView.mj_header endRefreshing];
+    });
+}
+#pragma mark 上拉加载
+-(void)loadMoreData{
+    // 2.模拟2秒后刷新表格UI（真实开发中，可以移除这段gcd代码）
+    __weak UITableView *tableView = self.tableView;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MJDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 刷新表格
+        [tableView reloadData];
+        
+        // 拿到当前的上拉刷新控件，结束刷新状态
+        [tableView.mj_footer endRefreshing];
+    });
 }
 // 重复字符串N次
 - (NSString *)getText:(NSString *)text withRepeat:(int)repeat {
@@ -83,20 +156,6 @@
     [self.heightAtIndexPath setObject:height forKey:indexPath];
 }
 
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    return UITableViewAutomaticDimension;
-//    
-//}
-//
-//- (void)drawRect:(CGRect)rect {
-//    if(image) { [image drawAtPoint:imagePoint];
-//        self.image = nil;
-//    }else {
-//        [placeHolder drawAtPoint:imagePoint];
-//    }
-//    [text drawInRect:textRect withFont:fontlineBreakMode:UILineBreakModeTailTruncation];
-//}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
      static NSString *ident = @"hdcell";
@@ -115,8 +174,8 @@
     cell.contextLabel.text = [self  getText:@"内容" withRepeat:((int)indexPath.row+2) * 10 + 1];;
     //开始异步加载图片
      cell.selectionStyle = UITableViewCellSelectionStyleNone; 
-    cell.headImage.image = [UIImage imageNamed:self.headImageArray[indexPath.row]];
-    cell.detailImage.image = [UIImage imageNamed:self.imageArray[indexPath.row]];
+    cell.headImage.image = [UIImage imageNamed:self.headImageArray[indexPath.row%3]];
+    cell.detailImage.image = [UIImage imageNamed:self.imageArray[indexPath.row%3]];
     
     return cell;
 }
