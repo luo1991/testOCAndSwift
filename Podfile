@@ -22,7 +22,7 @@ pod 'MJExtension'
 pod 'CHTCollectionViewWaterfallLayout'
 #pod 'Masonry'
 #pod 'Masonry', '0.0.8'
-#pod 'DKNightVersion'
+pod 'DKNightVersion'
 
 
 
