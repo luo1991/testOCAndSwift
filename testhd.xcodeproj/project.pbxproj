@@ -27,6 +27,9 @@
 		84356EAA1FA70BD500EB0EE1 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84356E9F1FA70BD500EB0EE1 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		84356EAB1FA70BD500EB0EE1 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84356EA11FA70BD500EB0EE1 /* View+MASAdditions.m */; };
 		84356EB11FA72F4000EB0EE1 /* HotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84356EB01FA72F4000EB0EE1 /* HotViewController.m */; };
+		843E9F741FBD3C130085D0D1 /* personModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E9F731FBD3C130085D0D1 /* personModel.m */; };
+		843E9F7B1FBD3C880085D0D1 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E9F7A1FBD3C880085D0D1 /* DetailViewController.m */; };
+		843E9F7E1FBD3CA20085D0D1 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 843E9F7D1FBD3CA20085D0D1 /* DetailModel.m */; };
 		8443B8F31FAABF40009FDD8C /* TabbarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8443B8F21FAABF40009FDD8C /* TabbarItem.m */; };
 		8443B8F81FAAE7DB009FDD8C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8443B8F71FAAE7DB009FDD8C /* BaseViewController.m */; };
 		8449428B1F6F9B1F00D19F32 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8449428A1F6F9B1F00D19F32 /* main.m */; };
@@ -106,6 +109,12 @@
 		84356EA21FA70BD500EB0EE1 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		84356EAF1FA72F4000EB0EE1 /* HotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotViewController.h; sourceTree = "<group>"; };
 		84356EB01FA72F4000EB0EE1 /* HotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotViewController.m; sourceTree = "<group>"; };
+		843E9F721FBD3C130085D0D1 /* personModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = personModel.h; sourceTree = "<group>"; };
+		843E9F731FBD3C130085D0D1 /* personModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = personModel.m; sourceTree = "<group>"; };
+		843E9F791FBD3C880085D0D1 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		843E9F7A1FBD3C880085D0D1 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		843E9F7C1FBD3CA20085D0D1 /* DetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
+		843E9F7D1FBD3CA20085D0D1 /* DetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		8443B8F11FAABF40009FDD8C /* TabbarItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbarItem.h; sourceTree = "<group>"; };
 		8443B8F21FAABF40009FDD8C /* TabbarItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbarItem.m; sourceTree = "<group>"; };
 		8443B8F61FAAE7DB009FDD8C /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -163,7 +172,9 @@
 		841663FE1F9D80E00006B705 /* HDperson */ = {
 			isa = PBXGroup;
 			children = (
-				841664001F9D81420006B705 /* cell */,
+				843E9F751FBD3C390085D0D1 /* detail */,
+				843E9F701FBD3BCB0085D0D1 /* Model */,
+				843E9F711FBD3BDB0085D0D1 /* view */,
 				841663FF1F9D810B0006B705 /* Contrlller */,
 			);
 			path = HDperson;
@@ -174,6 +185,7 @@
 			children = (
 				841663FB1F9D80DC0006B705 /* InfoViewController.h */,
 				841663FC1F9D80DC0006B705 /* InfoViewController.m */,
+				841664001F9D81420006B705 /* cell */,
 			);
 			path = Contrlller;
 			sourceTree = "<group>";
@@ -303,6 +315,57 @@
 			path = person;
 			sourceTree = "<group>";
 		};
+		843E9F701FBD3BCB0085D0D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				843E9F721FBD3C130085D0D1 /* personModel.h */,
+				843E9F731FBD3C130085D0D1 /* personModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		843E9F711FBD3BDB0085D0D1 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		843E9F751FBD3C390085D0D1 /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				843E9F761FBD3C490085D0D1 /* Model */,
+				843E9F771FBD3C590085D0D1 /* View */,
+				843E9F781FBD3C640085D0D1 /* Controller */,
+			);
+			path = detail;
+			sourceTree = "<group>";
+		};
+		843E9F761FBD3C490085D0D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				843E9F7C1FBD3CA20085D0D1 /* DetailModel.h */,
+				843E9F7D1FBD3CA20085D0D1 /* DetailModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		843E9F771FBD3C590085D0D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		843E9F781FBD3C640085D0D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				843E9F791FBD3C880085D0D1 /* DetailViewController.h */,
+				843E9F7A1FBD3C880085D0D1 /* DetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		8443B8F01FAABF10009FDD8C /* tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,8 +460,8 @@
 		84D570B01FA85CBE00BCE018 /* read */ = {
 			isa = PBXGroup;
 			children = (
-				84C25E741F9846A40001D8C2 /* ReadViewController.m */,
 				84C25E731F9846A40001D8C2 /* ReadViewController.h */,
+				84C25E741F9846A40001D8C2 /* ReadViewController.m */,
 			);
 			path = read;
 			sourceTree = "<group>";
@@ -601,6 +664,7 @@
 				84356EA81FA70BD500EB0EE1 /* MASViewConstraint.m in Sources */,
 				842AA09E1FAC587400DF6110 /* LoginViewController.m in Sources */,
 				84356EAB1FA70BD500EB0EE1 /* View+MASAdditions.m in Sources */,
+				843E9F741FBD3C130085D0D1 /* personModel.m in Sources */,
 				84356EB11FA72F4000EB0EE1 /* HotViewController.m in Sources */,
 				84356EA31FA70BD500EB0EE1 /* MASCompositeConstraint.m in Sources */,
 				84C25E781F9846C90001D8C2 /* ScienceViewController.m in Sources */,
@@ -608,7 +672,9 @@
 				84886FD81F99902200A309E5 /* PersonViewController.m in Sources */,
 				84356EA61FA70BD500EB0EE1 /* MASLayoutConstraint.m in Sources */,
 				84356E841FA707EE00EB0EE1 /* iCarousel.m in Sources */,
+				843E9F7E1FBD3CA20085D0D1 /* DetailModel.m in Sources */,
 				84F4CC1B1F95AF8500C77A9B /* TestViewController.m in Sources */,
+				843E9F7B1FBD3C880085D0D1 /* DetailViewController.m in Sources */,
 				8443B8F81FAAE7DB009FDD8C /* BaseViewController.m in Sources */,
 				84AD05171F94917C00117033 /* KVOViewController.m in Sources */,
 				8424A4641F7A42D0000B759E /* hdViewController.swift in Sources */,

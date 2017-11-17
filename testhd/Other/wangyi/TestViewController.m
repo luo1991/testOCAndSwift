@@ -24,6 +24,8 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
 @property(nonatomic,strong)UIScrollView *contextScrollView;
 @property(nonatomic,strong)NSMutableArray *titleArray;
 
+@property(nonatomic,strong)MBProgressHUD *HUD;
+
 @end
 
 @implementation TestViewController
@@ -32,7 +34,12 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     [super viewDidLoad];
     
     
-    
+    if(!_HUD){
+        _HUD = [[MBProgressHUD alloc] initWithView:self.view];
+        _HUD.removeFromSuperViewOnHide = NO;
+        _HUD.mode = MBProgressHUDModeIndeterminate;
+        [self.view addSubview:_HUD];
+    }
     // 1.添加所有子控制器
     [self setUpChildViewController];
     // 2.初始化UIScrollView
