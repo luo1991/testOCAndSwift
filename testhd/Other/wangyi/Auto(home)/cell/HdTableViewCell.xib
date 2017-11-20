@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,39 +19,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="350" height="266.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZC-qC-PXR" userLabel="头像">
-                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pZC-qC-PXR" userLabel="头像">
+                        <rect key="frame" x="21" y="16" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="XJy-fR-msr"/>
                             <constraint firstAttribute="width" constant="40" id="xCW-R4-oRH"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5A-87-hwd">
-                        <rect key="frame" x="68" y="17" width="241" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D5A-87-hwd">
+                        <rect key="frame" x="81" y="17" width="228" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FNu-bX-KMM">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FNu-bX-KMM">
                         <rect key="frame" x="62" y="74" width="240" height="158"/>
                         <constraints>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="Ryt-Ro-cYl"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="UX4-Bf-9MZ"/>
-                            <constraint firstAttribute="height" constant="128" id="UyI-um-Y7X"/>
+                            <constraint firstAttribute="height" constant="158" id="UyI-um-Y7X"/>
                             <constraint firstAttribute="width" constant="240" id="rBq-hy-5Ou"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="D5A-87-hwd" firstAttribute="leading" secondItem="pZC-qC-PXR" secondAttribute="trailing" constant="5" id="8mq-Mh-eDm"/>
-                    <constraint firstItem="FNu-bX-KMM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="50" id="Fz6-ak-y9A"/>
+                    <constraint firstItem="D5A-87-hwd" firstAttribute="leading" secondItem="pZC-qC-PXR" secondAttribute="trailing" constant="20" id="8mq-Mh-eDm"/>
+                    <constraint firstItem="FNu-bX-KMM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="46" id="Fz6-ak-y9A"/>
                     <constraint firstItem="pZC-qC-PXR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="P27-R9-hjw"/>
-                    <constraint firstItem="D5A-87-hwd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Q2s-e3-8rF"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="D5A-87-hwd" secondAttribute="trailing" constant="5" id="Qn0-TM-p02"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="FNu-bX-KMM" secondAttribute="bottom" constant="5" id="Thm-AM-gY8"/>
+                    <constraint firstItem="D5A-87-hwd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="Q2s-e3-8rF"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="D5A-87-hwd" secondAttribute="trailing" constant="25" id="Qn0-TM-p02"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="FNu-bX-KMM" secondAttribute="bottom" constant="24" id="Thm-AM-gY8"/>
                     <constraint firstItem="pZC-qC-PXR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="arP-ZP-tt0"/>
-                    <constraint firstItem="FNu-bX-KMM" firstAttribute="top" secondItem="D5A-87-hwd" secondAttribute="bottom" constant="5" id="fGy-i5-uUl"/>
-                    <constraint firstItem="FNu-bX-KMM" firstAttribute="top" secondItem="D5A-87-hwd" secondAttribute="bottom" constant="5" id="jLP-IK-PIr"/>
+                    <constraint firstItem="FNu-bX-KMM" firstAttribute="top" secondItem="D5A-87-hwd" secondAttribute="bottom" constant="36" id="fGy-i5-uUl"/>
+                    <constraint firstItem="FNu-bX-KMM" firstAttribute="top" secondItem="D5A-87-hwd" secondAttribute="bottom" constant="36" id="jLP-IK-PIr"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

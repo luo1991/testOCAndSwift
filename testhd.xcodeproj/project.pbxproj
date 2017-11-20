@@ -185,7 +185,6 @@
 			children = (
 				841663FB1F9D80DC0006B705 /* InfoViewController.h */,
 				841663FC1F9D80DC0006B705 /* InfoViewController.m */,
-				841664001F9D81420006B705 /* cell */,
 			);
 			path = Contrlller;
 			sourceTree = "<group>";
@@ -327,6 +326,7 @@
 		843E9F711FBD3BDB0085D0D1 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				841664001F9D81420006B705 /* cell */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -604,6 +604,7 @@
 				"${PODS_ROOT}/DKNightVersion/DKNightVersion/ColorTable/DKColorTable.txt",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/XRCarouselView/XRCarouselView/XRPlaceholder.png",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (

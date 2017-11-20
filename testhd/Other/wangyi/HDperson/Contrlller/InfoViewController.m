@@ -9,6 +9,7 @@
 #import "InfoViewController.h"
 #import "PersonTableViewCell.h"
 #import "DetailViewController.h"
+
 @interface InfoViewController ()<UITableViewDelegate,UITableViewDataSource,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,strong)NSArray *dataArray;
 @property(nonatomic,strong)UITableView *infoTableView;
@@ -144,7 +145,9 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     DetailViewController *detailVC = [[DetailViewController alloc] init];
+    
     [self.navigationController pushViewController:detailVC animated:NO];
     
 }

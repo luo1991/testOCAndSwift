@@ -161,6 +161,7 @@
     
     childController.tabBarItem.selectedImage = [UIImage imageNamed:selectImage];
     self.tabBar.dk_barTintColorPicker = DKColorPickerWithKey(BAR);
+
      self.tabBar.tintColor = [UIColor redColor];
     
     [self addChildViewController:navController];
