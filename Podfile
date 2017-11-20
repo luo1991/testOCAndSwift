@@ -25,6 +25,6 @@ pod 'CHTCollectionViewWaterfallLayout'
 pod 'DKNightVersion'
 #pod 'Realm'
 pod 'DKNightVersion'
-
+pod 'XRCarouselView'
 
 end
