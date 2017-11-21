@@ -68,6 +68,9 @@
     
 }
 
+- (void)carouselView:(XRCarouselView *)carouselView clickImageAtIndex:(NSInteger)index{
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
