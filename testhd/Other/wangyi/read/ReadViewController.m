@@ -7,46 +7,26 @@
 //
 
 
-typedef NS_ENUM(NSInteger, BluetoothState){
-    BluetoothStateDisconnect = 0,
-    BluetoothStateScanSuccess,
-    BluetoothStateScaning,
-    BluetoothStateConnected,
-    BluetoothStateConnecting
-};
 
-typedef NS_ENUM(NSInteger, BluetoothFailState){
-    BluetoothFailStateUnExit = 0,
-    BluetoothFailStateUnKnow,
-    BluetoothFailStateByHW,
-    BluetoothFailStateByOff,
-    BluetoothFailStateUnauthorized,
-    BluetoothFailStateByTimeout
-};
-
-
-
-
+static CGFloat const labelWidth = 80;  // 标题文字宽度
+static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label放大倍数
 
 #import "ReadViewController.h"
 
-#import <CoreBluetooth/CoreBluetooth.h>
-
-@interface ReadViewController ()<CBCentralManagerDelegate,CBPeripheralDelegate,UITableViewDelegate,UITableViewDataSource>
-@property (strong , nonatomic) CBCentralManager *manager;//中央设备
-
-@property (assign , nonatomic) BluetoothFailState bluetoothFailState;
-@property (assign , nonatomic) BluetoothState bluetoothState;
 
 
-@property (strong , nonatomic) CBPeripheral * discoveredPeripheral;//周边设备
+#import "HWCalendar.h"
 
-@property (strong , nonatomic) CBCharacteristic *characteristic1;//周边设备服务特性
+@interface ReadViewController ()<HWCalendarDelegate,UIScrollViewDelegate>
 
+@property(nonatomic,strong)UIScrollView *titleScrollView;
 
-@property(nonatomic,strong)UITableView *buleTableView;
+@property(nonatomic,strong)NSMutableArray *titleArray;
+@property(nonatomic,weak)UILabel *titleLabel;
+@property(nonatomic,strong)UILabel *yearLabel;// 显示年份的控件
 
-@property(nonatomic,strong)NSMutableArray *bleViewPerArr;
+@property(nonatomic,assign)NSInteger month;
+
 
 @end
 
@@ -55,152 +35,220 @@ typedef NS_ENUM(NSInteger, BluetoothFailState){
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    self.buleTableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    [self.view addSubview:self.buleTableView];
-    [self.buleTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(self.view);
-        make.top.left.mas_equalTo(0);
-    }];
-    self.buleTableView.delegate = self;
-    self.buleTableView.dataSource = self;
     
-    // 实例化蓝牙
-    self.manager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
-    self.manager.delegate = self;
-    self.bleViewPerArr = [NSMutableArray array];
+    NSInteger month = [NSDate month:[NSDate date]];
+    self.month = month;
+//    NSInteger year = [NSDate year:[NSDate date]];
+    NSMutableArray *getData = [NSMutableArray array];
+    for (int i= (int)month; i > 0; i--) {
+        NSString *getMonth = [NSString stringWithFormat:@"%d月",i];
+        [getData insertObject:getMonth atIndex:0];
+        if (i==1) {
+            for (int j= 12; j > 0; j--){
+                NSString *getMonth = [NSString stringWithFormat:@" %d月 ",j];
+                [getData insertObject:getMonth atIndex:0];
+            }
+        }
+    }
+    
+    
+//    NSLog(@"huoqushuju %@",getData);
+    self.titleScrollView = [[UIScrollView alloc] init];
+    self.titleScrollView.backgroundColor = [UIColor whiteColor];
+    self.titleScrollView.showsHorizontalScrollIndicator = NO;
+    self.titleScrollView.dk_backgroundColorPicker = DKColorPickerWithKey(BG);
+//    [self.view addSubview:self.titleScrollView];
+//    [self.titleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.width.equalTo(self.view.mas_width);
+//        make.top.mas_equalTo(0);
+//        make.height.mas_equalTo(44);
+//        make.left.equalTo(@0);
+//    }];
+    self.titleScrollView.contentSize = CGSizeMake(getData.count*labelWidth+40, 0);
+    self.titleScrollView.delegate = self;
+    [self setUpTitleLabelWithCount:getData];
+    
+    //日历
+    HWCalendar *calendar = [[HWCalendar alloc] init];
+    calendar.delegate = self;
+    calendar.showTimePicker = YES;
+    [self.view addSubview:calendar];
+//    WithFrame:CGRectMake(7, [UIScreen mainScreen].bounds.size.height, 400, 396)
+    [calendar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(400, 396));
+        make.top.mas_equalTo(0);
+        make.centerX.mas_equalTo(self.view);
+    }];
+    
+//    self.calendar = calendar;
+
     
    
     
     
     // Do any additional setup after loading the view.
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *buleId = @"bulePer";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:buleId];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:buleId];
+- (NSMutableArray *)titleArray
+{
+    if (_titleArray == nil) {
+        _titleArray = [NSMutableArray array];
     }
-    // 将蓝牙外设对象接出，取出name，显示
-    //蓝牙对象在下面环节会查找出来，被放进BleViewPerArr数组里面，是CBPeripheral对象
-    CBPeripheral *per=(CBPeripheral *)_bleViewPerArr[indexPath.row];
-    NSString *bleName=[per.name substringWithRange:NSMakeRange(0, 9)];
-    cell.textLabel.text = bleName;
-    return cell;
-}
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return  self.bleViewPerArr.count;
+    return _titleArray;
 }
 
 
-#pragma mark 开始扫描
--(void)scan{
-    // 判断状态开始扫描周围设备，第一个参数为空则会扫描所有的可连接设备，你可以
-//    指定一个CBUUID对象，从而只扫描注册用指定服务的设备
-    //scanForPeripheralsWithServices方法调用完后会调用代理CBCentralManagerDelegate的
+-(void)setUpTitleLabelWithCount:(NSMutableArray *)getData{
+//    NSUInteger count = self.childViewControllers.count;
+    int count = (int) getData.count;
     
-    [self.manager scanForPeripheralsWithServices:nil options:@{CBCentralManagerScanOptionAllowDuplicatesKey:@NO}];
-    _bluetoothState = BluetoothStateScaning;
-    [self.bleViewPerArr removeAllObjects];
-    if (_bluetoothState == BluetoothFailStateByOff) {
-        NSLog(@"检查您的蓝牙是否开启");
+    CGFloat labelX = 0;
+    CGFloat labelY = 0;
+    CGFloat labelH = 44;
+    _yearLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, labelWidth/2, labelH)];
+//    [self.view addSubview:_yearLabel];
+    NSString *year = [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]];
+    _yearLabel.backgroundColor = [UIColor lightGrayColor];
+    _yearLabel.textAlignment = NSTextAlignmentCenter;
+    _yearLabel.text=year;
+    for (int i = 0 ;i<count; i++) {
+        UILabel *label = [[UILabel alloc] init];
+        labelX= (i+0.5) *labelWidth;
+        label.frame = CGRectMake(labelX, labelY, labelWidth, labelH);
+        label.text = getData[i];
+        label.highlightedTextColor = [UIColor redColor];
+        label.tag = i;
+        label.dk_textColorPicker = DKColorPickerWithKey(TEXT);
+        label.userInteractionEnabled = YES;
+        label.textAlignment = NSTextAlignmentCenter;
+        [self.titleArray addObject:label];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick:)];
+        [label addGestureRecognizer:tap];
+        if (i == count-1) {
+            [self tapClick:tap];
+            [self selectLabel:label];
+            
+        }
+        [self.titleScrollView addSubview:label];
+        
         
     }
-    
 }
-
-#pragma mark 检测蓝牙状态
--(void)centralManagerDidUpdateState:(CBCentralManager *)central{
-    NSLog(@"central.state %ld",(long)central.state);
+-(void)selectLabel:(UILabel *)label{
+    _titleLabel.highlighted = NO;
+    _titleLabel.transform = CGAffineTransformIdentity;
+    _titleLabel.dk_textColorPicker = DKColorPickerWithKey(TEXT);
+    label.highlighted = YES;
+    label.transform = CGAffineTransformMakeScale(radio, radio);
+    _titleLabel = label;
     
-    
-    
-    if (central.state != CBCentralManagerStatePoweredOn) {
-        NSLog(@"fail, state is off .");
-        switch (central.state) {
-            case CBManagerStatePoweredOff:
-                NSLog(@"连接失败了\n请您再检查一下您的手机蓝牙是否开启，\n然后再试一次");
-                _bluetoothFailState = BluetoothFailStateByOff;
-                break;
-            case CBCentralManagerStateResetting:
-                
-                _bluetoothFailState = BluetoothFailStateByTimeout;
-                break;
-            case CBCentralManagerStateUnsupported:
-               NSLog(@"检测到您的手机不支持蓝牙4.0\n所以建立不了连接.建议更换您\n的手机再试试。");
-                _bluetoothFailState = BluetoothFailStateByHW;
-                break;
-            case CBCentralManagerStateUnauthorized:
-                NSLog(@"连接失败了\n请您再检查一下您的手机蓝牙是否开启，\n然后再试一次");
-                _bluetoothFailState = BluetoothFailStateUnauthorized;
-                break;
-            case CBCentralManagerStateUnknown:
-                
-                _bluetoothFailState = BluetoothFailStateUnKnow;
-                break;
-                
-            default:
-                break;
-        }
-        return;
+    if ([label.text rangeOfString:@" "].location!=NSNotFound) {
+        _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]-1];
+    }else{
+        _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]];
     }
-    _bluetoothFailState = BluetoothFailStateUnExit;
-     [self scan];
-    NSLog(@"已开启蓝牙");
 }
-#pragma  mark  发现设备
--(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *,id> *)advertisementData RSSI:(NSNumber *)RSSI{
-    if (peripheral == nil ||peripheral.identifier == nil) {
-        return;
+
+-(void)tapClick:(UITapGestureRecognizer *)tap{
+    UILabel *selLabel =(UILabel *)tap.view;
+    [self selectLabel:selLabel];
+
+    [self setUpTitleCenter:selLabel];
+   
+    
+}
+-(void)setUpTitleCenter:(UILabel *)centerLabel{
+   
+//    return;
+    CGFloat offsetX = centerLabel.center.x - MainWidth * 0.5;
+    
+    if (offsetX <0) {
+        offsetX =0;
     }
-    NSString *pername = [NSString stringWithFormat:@"%@",peripheral.name];
-    NSRange range = [pername rangeOfString:@""];
-    //如果从搜索到的设备中找到指定设备名，和BleViewPerArr数组没有它的地址
-    //加入BleViewPerArr数组
-    if (range.location != NSNotFound &&[_bleViewPerArr containsObject:peripheral]==NO) {
-       
+    
+    CGFloat maxOffsetX = self.titleScrollView.contentSize.width-MainWidth;
+    
+    if (offsetX > maxOffsetX) {
+        offsetX = maxOffsetX;
     }
-     [_bleViewPerArr addObject:peripheral];
-    NSLog(@" 名字%@",peripheral.name);
-    _bluetoothFailState = BluetoothFailStateUnExit;
-    _bluetoothState = BluetoothStateScanSuccess;
-    [_buleTableView reloadData];
+    // 滚动标题滚动条
+    [self.titleScrollView setContentOffset:CGPointMake(offsetX, 0) animated:NO];
     
 }
 
-#pragma  mark 连接设备
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    CBPeripheral *peripheral = (CBPeripheral *)_bleViewPerArr[indexPath.row];
-    _discoveredPeripheral = peripheral;
-    _discoveredPeripheral.delegate = self;
-    [_manager connectPeripheral:peripheral options:@{CBConnectPeripheralOptionNotifyOnConnectionKey:@YES}];
+#pragma mark - UIScrollViewDelegate  一滚动就会调用
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    NSLog(@"scrollView.contentOffset.x  %f",scrollView.contentOffset.x);
+    if (scrollView.contentOffset.x<labelWidth*12) {
+        _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]-1];// 去年
+    }else{
+        _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]];//今年
+    }
+    
+//    CGFloat currenPage = scrollView.contentOffset.x/scrollView.bounds.size.width;
+////    NSLog(@"currenPage %f",currenPage);
+//
+//
+//    NSInteger leftIndex = currenPage;
+//    NSInteger rigtIndex = leftIndex+1;
+//
+//
+//    UILabel *leftLabel = self.titleArray[leftIndex];
+    
+//    NSLog(@"leftalabel  %@",leftLabel.text);
+    
+//
+//    UILabel *rightLabel;
+//    if (rigtIndex <self.titleArray.count-2) {
+//        rightLabel = self.titleArray[rigtIndex];
+//    }
+//    CGFloat rightScale = currenPage-leftIndex;
+//        NSLog(@"rightScale--%f",rightScale);
+//
+//    CGFloat leftScale = 1-rightScale ;
+//        NSLog(@"leftScale--%f",leftScale);
+//
+//    // 左边缩放
+//    leftLabel.transform = CGAffineTransformMakeScale(leftScale * 0.3 + 1, leftScale * 0.3+ 1);
+//
+//    // 右边缩放
+//    rightLabel.transform = CGAffineTransformMakeScale(rightScale * 0.3 + 1, rightScale * 0.3+ 1);
+//
+//    if ([self.dk_manager.themeVersion isEqualToString:DKThemeVersionNight]) {
+//        leftLabel.textColor = [UIColor colorWithRed:leftScale green:0 blue:0 alpha:1];
+//        rightLabel.textColor = [UIColor colorWithRed:rightScale green:1 blue:1 alpha:1];
+//        //        NSLog(@"night");
+//    }else{
+//        leftLabel.textColor = [UIColor colorWithRed:leftScale green:0 blue:0 alpha:1];
+//        rightLabel.textColor = [UIColor colorWithRed:rightScale green:0 blue:0 alpha:1];
+//        //        NSLog(@"moon");
+//    }
+   
+}
+#pragma mark - 结束滚动 需要做的事情
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    // 计算滚动到哪一页
+    NSInteger index = scrollView.contentOffset.x / scrollView.bounds.size.width;
+    NSLog(@"哪一页 %ld ",index);
+    
+//    UILabel *selLabel = self.titleArray[index];
+//
+//    [self selectLabel:selLabel];
+//    [self setUpTitleCenter:selLabel];
     
 }
 
-#pragma  mark 连接成功 读取该设备信息
--(void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
-    NSLog(@"%@",peripheral);
-    // 设置设备代理
-    peripheral.delegate = self;
-    // 大概获取服务和特征
-    [peripheral discoverServices:nil];
-    //或许只获取你的设备蓝牙服务的uuid数组，一个或者多个
-    //[peripheral discoverServices:@[[CBUUID UUIDWithString:@""],[CBUUID UUIDWithString:@""]]];
-    
-    
-    NSLog(@"Peripheral Connected");
-    
-    [_manager stopScan];
-    
-    NSLog(@"Scanning stopped");
-    
-    _bluetoothState=BluetoothStateConnected;
-    
 
-    
-    
-    
-    
+
+#pragma mark - HWCalendarDelegate
+- (void)calendar:(HWCalendar *)calendar didClickSureButtonWithDate:(NSString *)date
+{
+    NSLog(@"  HWCalendar  date %@",date);
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {

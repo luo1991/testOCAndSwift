@@ -15,6 +15,7 @@
 #import "InfoViewController.h"
 #import "HotViewController.h"
 #import "TabbarItem.h"
+#import "CalendarViewController.h"
 @interface HdTabBarController ()
 @property(nonatomic,strong)UIButton *selectBtn;
 @end
@@ -133,7 +134,8 @@
     
         [[UITabBar appearance] setBackgroundColor:[UIColor whiteColor]];
     
-   
+    CalendarViewController  *calendarVC= [[CalendarViewController alloc] init];
+    [self addChildViewController:calendarVC andTitle:@"日历" andNormalImage:@"index" andSelectImage:@"index_cur"];
     TestViewController  *HomeViewController= [[TestViewController alloc] init];
     [self addChildViewController:HomeViewController andTitle:@"首页" andNormalImage:@"index" andSelectImage:@"index_cur"];
     HotViewController *hotVC = [[HotViewController alloc] init];

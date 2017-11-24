@@ -37,6 +37,11 @@
 		844942991F6F9B1F00D19F32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844942971F6F9B1F00D19F32 /* LaunchScreen.storyboard */; };
 		8452F31A1F7BA42A002098F4 /* HdNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8452F3191F7BA42A002098F4 /* HdNavigationController.m */; };
 		8460CF9E1F9DF1BC00621ED0 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8460CF9D1F9DF1BB00621ED0 /* MediaPlayer.framework */; };
+		846D1BAB1FC7D8340083C423 /* HWCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D1BA81FC7D8340083C423 /* HWCalendar.m */; };
+		846D1BAC1FC7D8340083C423 /* HWOptionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D1BAA1FC7D8340083C423 /* HWOptionButton.m */; };
+		846D1BAF1FC7DEEB0083C423 /* TitleScrollview.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D1BAE1FC7DEEB0083C423 /* TitleScrollview.m */; };
+		846D1BB11FC7EADD0083C423 /* DKColorTable.txt in Resources */ = {isa = PBXBuildFile; fileRef = 846D1BB01FC7EADD0083C423 /* DKColorTable.txt */; };
+		846D1BB41FC805810083C423 /* CalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846D1BB31FC805810083C423 /* CalendarViewController.m */; };
 		846F1D611FC7BD1800606659 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 846F1D601FC7BD1800606659 /* NSDate+Extension.m */; };
 		84886FD81F99902200A309E5 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84886FD71F99902200A309E5 /* PersonViewController.m */; };
 		84AD05171F94917C00117033 /* KVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD05161F94917C00117033 /* KVOViewController.m */; };
@@ -130,6 +135,15 @@
 		8452F3181F7BA42A002098F4 /* HdNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HdNavigationController.h; sourceTree = "<group>"; };
 		8452F3191F7BA42A002098F4 /* HdNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HdNavigationController.m; sourceTree = "<group>"; };
 		8460CF9D1F9DF1BB00621ED0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		846D1BA71FC7D8340083C423 /* HWCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWCalendar.h; sourceTree = "<group>"; };
+		846D1BA81FC7D8340083C423 /* HWCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWCalendar.m; sourceTree = "<group>"; };
+		846D1BA91FC7D8340083C423 /* HWOptionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWOptionButton.h; sourceTree = "<group>"; };
+		846D1BAA1FC7D8340083C423 /* HWOptionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWOptionButton.m; sourceTree = "<group>"; };
+		846D1BAD1FC7DEEB0083C423 /* TitleScrollview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TitleScrollview.h; sourceTree = "<group>"; };
+		846D1BAE1FC7DEEB0083C423 /* TitleScrollview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleScrollview.m; sourceTree = "<group>"; };
+		846D1BB01FC7EADD0083C423 /* DKColorTable.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DKColorTable.txt; sourceTree = "<group>"; };
+		846D1BB21FC805810083C423 /* CalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarViewController.h; sourceTree = "<group>"; };
+		846D1BB31FC805810083C423 /* CalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarViewController.m; sourceTree = "<group>"; };
 		846F1D5F1FC7BD1800606659 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
 		846F1D601FC7BD1800606659 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
 		84886FD61F99902200A309E5 /* PersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
@@ -230,6 +244,8 @@
 		84356E801FA707EE00EB0EE1 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				846D1BB01FC7EADD0083C423 /* DKColorTable.txt */,
+				846D1BA61FC7D8340083C423 /* HWCalendar */,
 				84356E8B1FA70BD500EB0EE1 /* Masonry */,
 				84356E811FA707EE00EB0EE1 /* iCarousel */,
 			);
@@ -278,9 +294,9 @@
 		84356EAC1FA711F800EB0EE1 /* wangyi */ = {
 			isa = PBXGroup;
 			children = (
+				84D570B01FA85CBE00BCE018 /* read */,
 				84FA5D251F79EFDD00A3F311 /* Auto(home) */,
 				841663FE1F9D80E00006B705 /* HDperson */,
-				84D570B01FA85CBE00BCE018 /* read */,
 				84C25E761F9846C90001D8C2 /* ScienceViewController.h */,
 				84C25E771F9846C90001D8C2 /* ScienceViewController.m */,
 				84AD05151F94917C00117033 /* KVOViewController.h */,
@@ -440,6 +456,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		846D1BA61FC7D8340083C423 /* HWCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				846D1BA71FC7D8340083C423 /* HWCalendar.h */,
+				846D1BA81FC7D8340083C423 /* HWCalendar.m */,
+				846D1BA91FC7D8340083C423 /* HWOptionButton.h */,
+				846D1BAA1FC7D8340083C423 /* HWOptionButton.m */,
+				846D1BAD1FC7DEEB0083C423 /* TitleScrollview.h */,
+				846D1BAE1FC7DEEB0083C423 /* TitleScrollview.m */,
+			);
+			path = HWCalendar;
+			sourceTree = "<group>";
+		};
 		846F1D5D1FC7BC7700606659 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +533,8 @@
 		84FA5D221F79EFDD00A3F311 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				846D1BB21FC805810083C423 /* CalendarViewController.h */,
+				846D1BB31FC805810083C423 /* CalendarViewController.m */,
 				842AA0A01FAC587F00DF6110 /* login */,
 				84356EAC1FA711F800EB0EE1 /* wangyi */,
 				848AABE81F94903D0094DCF8 /* hot */,
@@ -606,6 +637,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				844942991F6F9B1F00D19F32 /* LaunchScreen.storyboard in Resources */,
+				846D1BB11FC7EADD0083C423 /* DKColorTable.txt in Resources */,
 				844942961F6F9B1F00D19F32 /* Assets.xcassets in Resources */,
 				844942941F6F9B1F00D19F32 /* Main.storyboard in Resources */,
 				84FA5D2F1F79EFDD00A3F311 /* HdTableViewCell.xib in Resources */,
@@ -684,8 +716,10 @@
 				84356EA51FA70BD500EB0EE1 /* MASConstraintMaker.m in Sources */,
 				84FA5D2D1F79EFDD00A3F311 /* OtherViewController.m in Sources */,
 				84FA5D2C1F79EFDD00A3F311 /* AppDelegate.m in Sources */,
+				846D1BAF1FC7DEEB0083C423 /* TitleScrollview.m in Sources */,
 				8449428B1F6F9B1F00D19F32 /* main.m in Sources */,
 				8424A4661F7A4307000B759E /* hdtest.swift in Sources */,
+				846D1BAC1FC7D8340083C423 /* HWOptionButton.m in Sources */,
 				84C4B0781FC52D6E001B2367 /* NSString+isEmpty.m in Sources */,
 				84356EA81FA70BD500EB0EE1 /* MASViewConstraint.m in Sources */,
 				842AA09E1FAC587400DF6110 /* LoginViewController.m in Sources */,
@@ -711,7 +745,9 @@
 				84FA5D301F79EFDD00A3F311 /* ViewController.m in Sources */,
 				8443B8F31FAABF40009FDD8C /* TabbarItem.m in Sources */,
 				842ED9661FA87DA700D4DB26 /* HttpToolRequest.m in Sources */,
+				846D1BB41FC805810083C423 /* CalendarViewController.m in Sources */,
 				8452F31A1F7BA42A002098F4 /* HdNavigationController.m in Sources */,
+				846D1BAB1FC7D8340083C423 /* HWCalendar.m in Sources */,
 				84356EA91FA70BD500EB0EE1 /* NSArray+MASAdditions.m in Sources */,
 				84FA5D331F79F03200A3F311 /* HdTabBarController.m in Sources */,
 				84D570AD1FA80B4A00BCE018 /* WaterfallCollectionViewCell.m in Sources */,

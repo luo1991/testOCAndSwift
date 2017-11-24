@@ -208,23 +208,22 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
 }
 
 
-
-
 // 添加所有子控制器
 -(void)setUpChildViewController{
+   
     ViewController *hotVC = [[ViewController alloc] init];
     hotVC.title = @"推荐";
     [self addChildViewController:hotVC];
     KVOViewController *kvoVC = [[KVOViewController alloc] init];
     kvoVC.title = @"热点";
     [self addChildViewController:kvoVC];
+    ReadViewController *readerVC = [[ReadViewController alloc] init];
+    readerVC.title = @"阅读";
+    [self addChildViewController:readerVC];
     InfoViewController *otherVC = [[InfoViewController alloc] init];
     otherVC.title = @"定制";
     [self addChildViewController:otherVC];
    
-    ReadViewController *readerVC = [[ReadViewController alloc] init];
-    readerVC.title = @"阅读";
-    [self addChildViewController:readerVC];
     
     ScienceViewController *scienceVC = [[ScienceViewController alloc] init];
     scienceVC.title= @"科技";
