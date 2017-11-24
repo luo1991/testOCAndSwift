@@ -171,52 +171,13 @@
     }
 }
 
-//上一月按钮点击事件
-- (void)preBtnOnClick
-{
-    if (_month == 1) {
-        if (_yearBtn.row == 0) return;
-        _year --;
-        _month = 12;
-        _yearBtn.row --;
-    }else {
-        _month --;
-    }
-    
-    _monthBtn.row = _month - 1;
-    [self reloadData];
-}
 
-//下一月按钮点击事件
-- (void)nextBtnOnClick
-{
-    if (_month == 12) {
-        if (_yearBtn.row == KShowYearsCount - 1) return;
-        _year ++;
-        _month = 1;
-        _yearBtn.row ++;
-    }else {
-        _month ++;
-    }
-    
-    _monthBtn.row = _month - 1;
-    [self reloadData];
-}
-
-//返回今天
-- (void)backTodayBtnOnClick
-{
-    _year = _currentYear;
-    _month = _currentMonth;
-    _monthBtn.row = _month - 1;
-    _yearBtn.row = KShowYearsCount / 2;
-    
-    [self reloadData];
-}
 
 //刷新数据
 - (void)reloadData
 {
+    
+    
     NSInteger totalDays = [self numberOfDaysInMonth];
     NSInteger firstDay = [self firstDayOfWeekInMonth];
     
@@ -252,6 +213,8 @@
             [btn setTitle:[NSString stringWithFormat:@"%ld", i - (firstDay - 1) + 1] forState:UIControlStateNormal];
         }
     }
+    
+    [self sureBtnOnClick];
 }
 
 //获取当前时间
@@ -320,6 +283,9 @@
     }
     
     btn.selected = YES;
+    
+//    NSLog(@"%ld %ld %ld",_year,_month,_day);
+    [self sureBtnOnClick];
 }
 
 #pragma mark - UIPickerViewDelegate
@@ -362,31 +328,19 @@
     return pickerLabel;
 }
 
-#pragma mark - HWOptionButtonDelegate
-- (void)didSelectOptionInHWOptionButton:(HWOptionButton *)optionButton
-{
-    if (optionButton.title.length > 2) {
-        _year = [optionButton.title integerValue];
-        _yearBtn.title = [NSString stringWithFormat:@"%ld年", _year];
-    }else {
-        _month = [optionButton.title integerValue];
-        _monthBtn.title = [NSString stringWithFormat:@"%ld月", _month];
-    }
-    
-    [self reloadData];
-}
+
 
 //确认按钮点击事件
 - (void)sureBtnOnClick
 {
-    [self dismiss];
+//    [self dismiss];
     
     NSString *date;
-    if (_showTimePicker) {
-        date = [NSString stringWithFormat:@"%ld-%02ld-%02ld %02ld:%02ld", _year, _month, _day, _hour, _minute];
-    }else {
-        date = [NSString stringWithFormat:@"%ld-%02ld-%02ld", _year, _month, _day];
-    }
+//    if (_showTimePicker) {
+//        date = [NSString stringWithFormat:@"%ld-%02ld-%02ld %02ld:%02ld", _year, _month, _day, _hour, _minute];
+//    }else {
+        date = [NSString stringWithFormat:@"%ld-%ld-%ld", _year, _month, _day];
+//    }
     
     if (_delegate && [_delegate respondsToSelector:@selector(calendar:didClickSureButtonWithDate:)]) {
         [_delegate calendar:self didClickSureButtonWithDate:date];
@@ -433,7 +387,8 @@
 
     }
 //    date = [NSString stringWithFormat:@"%ld-%02ld-%02ld", _year, _month, _day];
-    NSLog(@"%ld年 %ld月 %ld日",_year,_month,_day);
+//    NSLog(@"%ld年 %ld月 ",_year,_month);
+//    NSLog(@"%ld日",_day);
     
     [self reloadData];
 }
