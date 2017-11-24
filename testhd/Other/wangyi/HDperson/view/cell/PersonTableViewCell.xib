@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,15 +19,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="331" height="58.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_person.png" translatesAutoresizingMaskIntoConstraints="NO" id="TwI-4O-Zye">
-                        <rect key="frame" x="25" y="10" width="40" height="40"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tabbar_other" translatesAutoresizingMaskIntoConstraints="NO" id="TwI-4O-Zye">
+                        <rect key="frame" x="25" y="12" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="Fmb-o3-Ws3"/>
                             <constraint firstAttribute="height" constant="40" id="eyi-Cs-c1v"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个人信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhF-HD-DLz">
-                        <rect key="frame" x="75" y="8" width="150" height="40"/>
+                        <rect key="frame" x="75" y="11" width="150" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="k82-O8-kAa"/>
                             <constraint firstAttribute="width" constant="150" id="tDM-KZ-YoD"/>
@@ -40,7 +40,7 @@
                     <constraint firstItem="TwI-4O-Zye" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="25" id="QYa-cs-Lq7"/>
                     <constraint firstItem="RhF-HD-DLz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="h3G-NK-09z"/>
                     <constraint firstItem="RhF-HD-DLz" firstAttribute="leading" secondItem="TwI-4O-Zye" secondAttribute="trailing" constant="10" id="h9J-Ua-nMf"/>
-                    <constraint firstItem="TwI-4O-Zye" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="hlH-9I-zNZ"/>
+                    <constraint firstItem="TwI-4O-Zye" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="hlH-9I-zNZ"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -51,6 +51,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="tabbar_person.png" width="45" height="45"/>
+        <image name="tabbar_other" width="45" height="45"/>
     </resources>
 </document>

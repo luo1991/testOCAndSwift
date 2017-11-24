@@ -26,5 +26,7 @@ pod 'DKNightVersion'
 #pod 'Realm'
 pod 'DKNightVersion'
 pod 'XRCarouselView'
+pod 'IQKeyboardManager' #iOS8 and later
 
+#pod 'IQKeyboardManager', '3.3.7' #iOS7
 end

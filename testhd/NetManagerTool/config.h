@@ -16,8 +16,10 @@
 
 //#define  PublicURL @"http://hdoa.dbccv.com:8080"; // 正式
 
-#define  PublicURL @"http://192.168.0.146:8080/hdoa";//强
+#define  PublicURL @"http://192.168.0.146:8080/hdoa"//强
 
-#define detailURL @"/app/v2/viewLeave.do";
+#define detailURL @"/app/v2/viewAttendanceApply.do"
+
+
 
 #endif /* config_h */

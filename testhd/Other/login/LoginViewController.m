@@ -9,11 +9,25 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *normalLogin;
 
+@property (weak, nonatomic) IBOutlet UIButton *qqLogin;
+
+@property (weak, nonatomic) IBOutlet UIButton *weixinLogin;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *weiboLogin;
 @end
 
 @implementation LoginViewController
 
+//-(id)init{
+//    
+//    self=[[[NSBundle mainBundle] loadNibNamed:@"LoginViewController" owner:self options:nil] lastObject];
+//    if (self) {
+//    }
+//    return self;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.

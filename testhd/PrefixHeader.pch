@@ -48,6 +48,10 @@
 // 广告轮播
 #import "XRCarouselView.h"
 
+#import "NSString+isEmpty.h"
+
+#import "IQKeyboardManager.h"
+
 
 #define  MainHeight  [[UIScreen mainScreen] bounds].size.height
 #define MainWidth    [[UIScreen mainScreen] bounds].size.width

@@ -9,8 +9,15 @@
 #import "DetailViewController.h"
 #import "HttpToolRequest.h"
 #import "DetailModel.h"
-@interface DetailViewController ()<XRCarouselViewDelegate>
+#import "DetailCell.h"
+@interface DetailViewController ()<XRCarouselViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) XRCarouselView *carouselView;
+
+@property(nonatomic,copy)DetailModel *dataModel;
+@property(nonatomic,strong)UITableView *tableView;
+
+@property(nonatomic,strong)NSArray *detailData;
+@property(nonatomic,strong)NSArray *titleData;
 @end
 
 @implementation DetailViewController
@@ -18,13 +25,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self getDetailData];
+    [self getDetailData];
     [self setUpAdView];
     
    
     
 }
--(void)setUpAdView{
+-(UIView *)setUpAdView{
     _carouselView = [[XRCarouselView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 180)];
     _carouselView.delegate = self;
     
@@ -50,18 +57,24 @@
     
     //设置分页控件的位置，默认为PositionBottomCenter
     _carouselView.pagePosition = PositionBottomCenter;
+    _carouselView.changeMode= ChangeModeFade;
     
     // 设置滑动时gif停止播放
     _carouselView.gifPlayMode = GifPlayModePauseWhenScroll;
     
-    [self.view addSubview:_carouselView];
+    return _carouselView;
 }
 -(void)getDetailData{
     
     
-    [HttpToolRequest postWithUrl:nil params:nil success:^(id responseObject) {
+    [HttpToolRequest postWithUrl:detailURL params:@{@"id":@"402880125fb31931015fb31bbc1b0000"} success:^(id responseObject) {
         //将字典数组转成模型数组, 最常用
-        NSArray *data = [DetailModel mj_objectArrayWithKeyValuesArray:responseObject[@"data"][@"list"]];
+        
+        NSLog(@"%@",responseObject);
+//        将字典转为模型
+        _dataModel = [DetailModel mj_objectWithKeyValues:responseObject[@"data"]];
+        [self setUpTalbeView];
+        
     } fail:^(NSError *error) {
         
     }];
@@ -69,7 +82,42 @@
 }
 
 - (void)carouselView:(XRCarouselView *)carouselView clickImageAtIndex:(NSInteger)index{
+    NSLog(@"点击%lu",(long)index);
+}
+-(void)setUpTalbeView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        [self.view addSubview:_tableView];
+       self.tableView.rowHeight = UITableViewAutomaticDimension;
+        self.tableView.estimatedRowHeight = 44.0;
+        _tableView.delegate = self;
+        _tableView.dataSource =self;
+        _tableView.tableHeaderView = [self setUpAdView];
+    }
     
+    [_tableView registerNib:[UINib nibWithNibName:@"detailCell" bundle:nil] forCellReuseIdentifier:@"DetailCell"];
+    _titleData= @[@"姓名",@"审批人",@"日期",@"类型",@"申请原因",@"申请状态",@"审批记录"];
+     _detailData= @[_dataModel.realname,_dataModel.leader,_dataModel.endDate,_dataModel.listOperator,_dataModel.reason,_dataModel.calendarTypeExplain,_dataModel.checkExplain];
+    [_tableView reloadData];
+    
+    
+}
+#pragma mark - UITableViewDelegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.titleData.count;
+    
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *ident = @"DetailCell";
+    DetailCell *cell =[tableView dequeueReusableCellWithIdentifier:ident];
+    if (!cell) {
+        cell = [[DetailCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:ident];
+    }
+    cell.titleLabel.text = _titleData[indexPath.row];
+    cell.nameLabel.text= _detailData[indexPath.row];
+   
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning {
