@@ -333,14 +333,10 @@
 //确认按钮点击事件
 - (void)sureBtnOnClick
 {
-//    [self dismiss];
-    
+
     NSString *date;
-//    if (_showTimePicker) {
-//        date = [NSString stringWithFormat:@"%ld-%02ld-%02ld %02ld:%02ld", _year, _month, _day, _hour, _minute];
-//    }else {
-        date = [NSString stringWithFormat:@"%ld-%ld-%ld", _year, _month, _day];
-//    }
+
+    date = [NSString stringWithFormat:@"%ld-%ld-%ld", _year, _month, _day];
     
     if (_delegate && [_delegate respondsToSelector:@selector(calendar:didClickSureButtonWithDate:)]) {
         [_delegate calendar:self didClickSureButtonWithDate:date];
