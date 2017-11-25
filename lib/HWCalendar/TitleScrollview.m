@@ -72,7 +72,7 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
         make.height.mas_equalTo(44);
         make.left.equalTo(self.mas_left);
     }];
-    self.titleScrollView.contentSize = CGSizeMake(getData.count*labelWidth+40, 0);
+    self.titleScrollView.contentSize = CGSizeMake(getData.count*labelWidth+56, 0);
     
     self.titleScrollView.bounces = NO;// 弹簧效果
      [self setUpTitleLabelWithCount:getData];
@@ -96,18 +96,19 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     CGFloat labelX = 0;
     CGFloat labelY = 0;
     CGFloat labelH = 44;
-    _yearLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 40, labelH)];
+    _yearLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 56, labelH)];
     [self addSubview:_yearLabel];
-    _yearLabel.backgroundColor = [UIColor lightGrayColor];
+    _yearLabel.backgroundColor = [UIColor whiteColor];
+    _yearLabel.textColor = KbackColor;
     _yearLabel.textAlignment = NSTextAlignmentCenter;
-    NSString *year = [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]];
+    NSString *year = [NSString stringWithFormat:@"%ld年",[NSDate year:[NSDate date]]];
     _yearLabel.text=year;
     for (int i = 0 ;i<count; i++) {
         UILabel *label = [[UILabel alloc] init];
-        labelX= (i+0.5) *labelWidth;
+        labelX= (i+0.7) *labelWidth;
         label.frame = CGRectMake(labelX, labelY, labelWidth, labelH);
         label.text = getData[i];
-        label.highlightedTextColor = [UIColor redColor];
+        label.highlightedTextColor = KbackColor;
         label.tag = i;
         label.dk_textColorPicker = DKColorPickerWithKey(TEXT);
         label.userInteractionEnabled = YES;
@@ -127,12 +128,20 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     }
 }
 -(void)selectLabel:(UILabel *)label{
+  
     _titleLabel.highlighted = NO;
     _titleLabel.transform = CGAffineTransformIdentity;
-    _titleLabel.dk_textColorPicker = DKColorPickerWithKey(TEXT);
+    
+//    _titleLabel.dk_textColorPicker = DKColorPickerWithKey(TEXT);
     label.highlighted = YES;
     label.transform = CGAffineTransformMakeScale(radio, radio);
+//    label.textColor = [UIColor whiteColor];
+    
+
     _titleLabel = label;
+   
+//    _titleLabel.backgroundColor = KbackColor;
+
 }
 
 #pragma mark 点击事件
@@ -142,10 +151,10 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     UILabel *selLabel =(UILabel *)tap.view;
     [self selectLabel:selLabel];
     if ([selLabel.text rangeOfString:@" "].location!=NSNotFound) {
-        _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]-1];
+        _yearLabel.text =  [NSString stringWithFormat:@"%ld年",[NSDate year:[NSDate date]]-1];
 
     }else{
-        _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]];
+        _yearLabel.text =  [NSString stringWithFormat:@"%ld年",[NSDate year:[NSDate date]]];
 
     }
     if ([self.delegate respondsToSelector:@selector(didSelectOptionIndexString:)]) {
@@ -177,10 +186,10 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (scrollView.contentOffset.x<labelWidth*12) {
-        _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]-1];// 去年
+        _yearLabel.text =  [NSString stringWithFormat:@"%ld年",[NSDate year:[NSDate date]]-1];// 去年
 
     }else{
-        _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]];//今年
+        _yearLabel.text =  [NSString stringWithFormat:@"%ld年",[NSDate year:[NSDate date]]];//今年
 
     }
     

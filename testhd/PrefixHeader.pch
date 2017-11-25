@@ -27,6 +27,9 @@
 /**十进制转化为颜色*/
 #define DLZColor(r,g,b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1]
 
+#define KbackColor [UIColor colorWithRed:66/255.0f green:152/255.0f blue:88/255.0f alpha:1.0f]
+
+
 
 #import "Masonry.h"
 #import "config.h"

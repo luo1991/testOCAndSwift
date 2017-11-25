@@ -18,9 +18,9 @@
 #define KTipsW 40
 #define KShowYearsCount 100
 #define KMainColor [UIColor colorWithRed:0.0f green:139/255.0f blue:125/255.0f alpha:1.0f]
-#define KbackColor [UIColor colorWithRed:173/255.0f green:212/255.0f blue:208/255.0f alpha:1.0f]
+#define KbackColor [UIColor colorWithRed:66/255.0f green:152/255.0f blue:88/255.0f alpha:1.0f]
 
-@interface HWCalendar ()<UIPickerViewDelegate, UIPickerViewDataSource, HWOptionButtonDelegate,TitleScrollviewDelegate>
+@interface HWCalendar ()<UIPickerViewDelegate, UIPickerViewDataSource,TitleScrollviewDelegate>
 
 @property (nonatomic, strong) NSArray *weekArray;
 @property (nonatomic, strong) NSArray *timeArray;
@@ -28,12 +28,12 @@
 @property (nonatomic, strong) NSArray *monthArray;
 @property (nonatomic, strong) UIPickerView *timePicker;
 @property (nonatomic, weak) UIView *calendarView;
-@property (nonatomic, weak) HWOptionButton *yearBtn;
-@property (nonatomic, weak) HWOptionButton *monthBtn;
-@property (nonatomic, weak) UILabel *weekLabel;
-@property (nonatomic, weak) UILabel *yearLabel;
-@property (nonatomic, weak) UILabel *monthLabel;
-@property (nonatomic, weak) UILabel *dayLabel;
+//@property (nonatomic, weak) HWOptionButton *yearBtn;
+//@property (nonatomic, weak) HWOptionButton *monthBtn;
+//@property (nonatomic, weak) UILabel *weekLabel;
+//@property (nonatomic, weak) UILabel *yearLabel;
+//@property (nonatomic, weak) UILabel *monthLabel;
+//@property (nonatomic, weak) UILabel *dayLabel;
 @property (nonatomic, assign) NSInteger year;
 @property (nonatomic, assign) NSInteger month;
 @property (nonatomic, assign) NSInteger day;
@@ -43,6 +43,8 @@
 @property (nonatomic, assign) NSInteger currentMonth;
 @property (nonatomic, assign) NSInteger currentDay;
 
+@property(nonatomic,assign)NSInteger nowMonth;
+
 @end
 
 @implementation HWCalendar
@@ -50,8 +52,10 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        
         //获取当前时间
         [self getCurrentDate];
+        self.nowMonth=[NSDate month:[NSDate date]];
         
         //获取数据源
         [self getDataSource];
@@ -102,14 +106,14 @@
     
     //星期标签
     for (int i = 0; i < _weekArray.count; i++) {
-        UILabel *week = [[UILabel alloc] initWithFrame:CGRectMake(KTipsW + KBtnH * i, KBtnH, KBtnH, KBtnH)];
+        UILabel *week = [[UILabel alloc] initWithFrame:CGRectMake((MainWidth-KBtnW * 7)/2 + KBtnH * i, KBtnH, KBtnH, KBtnH)];
         week.textAlignment = NSTextAlignmentCenter;
+        week.textColor = [UIColor whiteColor];
         week.text = _weekArray[i];
         [self addSubview:week];
     }
-    
     //日历核心视图
-    UIView *calendarView = [[UIView alloc] initWithFrame:CGRectMake(KTipsW, KBtnH * 2, KBtnW * 7, KBtnH * 6)];
+    UIView *calendarView = [[UIView alloc] initWithFrame:CGRectMake((MainWidth-KBtnW * 7)/2, KBtnH * 2, KBtnW * 7, KBtnH * 6)];
     [self addSubview:calendarView];
     self.calendarView = calendarView;
     
@@ -123,37 +127,16 @@
         btn.layer.cornerRadius = KBtnW * 0.5;
         btn.layer.masksToBounds = YES;
         [btn setTitle:[NSString stringWithFormat:@"%d", i + 1] forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [btn setTitleColor:KMainColor forState:UIControlStateSelected];
-        [btn setBackgroundImage:[self imageWithColor:KbackColor] forState:UIControlStateHighlighted];
-        [btn setBackgroundImage:[self imageWithColor:KbackColor] forState:UIControlStateSelected];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setTitleColor:KbackColor forState:UIControlStateSelected];
+        [btn setBackgroundImage:[self imageWithColor:[UIColor whiteColor]] forState:UIControlStateHighlighted];
+        [btn setBackgroundImage:[self imageWithColor:[UIColor whiteColor]] forState:UIControlStateSelected];
         [btn addTarget:self action:@selector(dateBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         [calendarView addSubview:btn];
+        
+        
     }
-    
-//    //确认按钮
-//    UIButton *sureBtn = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMinX(backTodayBtn.frame), CGRectGetMaxY(calendarView.frame), yearBtnW, KBtnH)];
-//    sureBtn.titleLabel.font = [UIFont systemFontOfSize:16.0f];
-//    [sureBtn setTitle:@"确定" forState:UIControlStateNormal];
-//    [sureBtn setTitleColor:KMainColor forState:UIControlStateNormal];
-//    [sureBtn addTarget:self action:@selector(sureBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:sureBtn];
-//    
-//    //取消按钮
-//    UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMinX(sureBtn.frame) - yearBtnW, CGRectGetMinY(sureBtn.frame), yearBtnW, KBtnH)];
-//    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:16.0f];
-//    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-//    [cancelBtn setTitleColor:KMainColor forState:UIControlStateNormal];
-//    [cancelBtn addTarget:self action:@selector(cancelBtnOnClick) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:cancelBtn];
-    
-//    //时间选择器
-//    _timePicker = [[UIPickerView alloc] init];
-//    _timePicker.backgroundColor = KMainColor;
-//    _timePicker.hidden = YES;
-//    _timePicker.delegate = self;
-//    _timePicker.dataSource = self;
-//    [self addSubview:_timePicker];
+
 }
 
 //set方法
@@ -163,11 +146,11 @@
     
     if (showTimePicker) {
         _timePicker.hidden = NO;
-        _dayLabel.frame = CGRectMake(0, CGRectGetMaxY(_monthLabel.frame) + 10, KTipsW, 120);
-        _timePicker.frame = CGRectMake(10, CGRectGetMaxY(_dayLabel.frame), KTipsW - 20, 88);
+//        _dayLabel.frame = CGRectMake(0, CGRectGetMaxY(_monthLabel.frame) + 10, KTipsW, 120);
+//        _timePicker.frame = CGRectMake(10, CGRectGetMaxY(_dayLabel.frame), KTipsW - 20, 88);
     }else {
         _timePicker.hidden = YES;
-        _dayLabel.frame = CGRectMake(0, CGRectGetMaxY(_monthLabel.frame) + 30, 200, 120);
+//        _dayLabel.frame = CGRectMake(0, CGRectGetMaxY(_monthLabel.frame) + 30, 200, 120);
     }
 }
 
@@ -181,10 +164,10 @@
     NSInteger totalDays = [self numberOfDaysInMonth];
     NSInteger firstDay = [self firstDayOfWeekInMonth];
     
-    _yearLabel.text = [NSString stringWithFormat:@"%ld", _year];
-    _monthLabel.text = [NSString stringWithFormat:@"%ld月", _month];
-    _yearBtn.title = [NSString stringWithFormat:@"%ld年", _year];
-    _monthBtn.title = [NSString stringWithFormat:@"%ld月", _month];
+//    _yearLabel.text = [NSString stringWithFormat:@"%ld", _year];
+//    _monthLabel.text = [NSString stringWithFormat:@"%ld月", _month];
+//    _yearBtn.title = [NSString stringWithFormat:@"%ld年", _year];
+//    _monthBtn.title = [NSString stringWithFormat:@"%ld月", _month];
     
     for (int i = 0; i < KMaxCount; i++) {
         UIButton *btn = (UIButton *)[self.calendarView viewWithTag:i + KBtnTag];
@@ -198,19 +181,35 @@
                 if (btn.tag - KBtnTag - (firstDay - 2) == _currentDay) {
                     btn.selected = YES;
                     _day = _currentDay;
-                    _weekLabel.text = [NSString stringWithFormat:@"星期%@", _weekArray[(btn.tag - KBtnTag) % 7]];
-                    _dayLabel.text = [NSString stringWithFormat:@"%ld", _day];
+//                    _weekLabel.text = [NSString stringWithFormat:@"星期%@", _weekArray[(btn.tag - KBtnTag) % 7]];
+//                    _dayLabel.text = [NSString stringWithFormat:@"%ld", _day];
+//
+                   NSLog(@"anniu %ld",_currentDay);
+                }else if (btn.tag - KBtnTag - (firstDay - 2) > _currentDay){
+                    if (self.nowMonth==_currentMonth) {
+                        btn.userInteractionEnabled= NO;
+                        [btn setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
+                    }
+                   
+                    
                 }
             }else {
+                
+                btn.userInteractionEnabled= YES;
+                [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
                 if (i == firstDay - 1) {
                     btn.selected = YES;
                     _day = btn.tag - KBtnTag - (firstDay - 2);
-                    _weekLabel.text = [NSString stringWithFormat:@"星期%@", _weekArray[(btn.tag - KBtnTag) % 7]];
-                    _dayLabel.text = [NSString stringWithFormat:@"%ld", _day];
+//                    _weekLabel.text = [NSString stringWithFormat:@"星期%@", _weekArray[(btn.tag - KBtnTag) % 7]];
+//                    _dayLabel.text = [NSString stringWithFormat:@"%ld", _day];
                 }
             }
             btn.enabled = YES;
             [btn setTitle:[NSString stringWithFormat:@"%ld", i - (firstDay - 1) + 1] forState:UIControlStateNormal];
+            
+           
+            
+            
         }
     }
     
@@ -272,8 +271,8 @@
 - (void)dateBtnOnClick:(UIButton *)btn
 {
     _day = btn.tag - KBtnTag - ([self firstDayOfWeekInMonth] - 2);
-    _weekLabel.text = [NSString stringWithFormat:@"星期%@", _weekArray[(btn.tag - KBtnTag) % 7]];
-    _dayLabel.text = [NSString stringWithFormat:@"%ld", _day];
+//    _weekLabel.text = [NSString stringWithFormat:@"星期%@", _weekArray[(btn.tag - KBtnTag) % 7]];
+//    _dayLabel.text = [NSString stringWithFormat:@"%ld", _day];
     
     if (btn.selected) return;
     
@@ -382,9 +381,7 @@
         
 
     }
-//    date = [NSString stringWithFormat:@"%ld-%02ld-%02ld", _year, _month, _day];
-//    NSLog(@"%ld年 %ld月 ",_year,_month);
-//    NSLog(@"%ld日",_day);
+
     
     [self reloadData];
 }

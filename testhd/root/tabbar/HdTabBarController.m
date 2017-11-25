@@ -18,6 +18,9 @@
 #import "CalendarViewController.h"
 @interface HdTabBarController ()
 @property(nonatomic,strong)UIButton *selectBtn;
+
+@property(nonatomic,assign)int number;
+
 @end
 
 @implementation HdTabBarController

@@ -12,6 +12,7 @@
 @interface ScienceViewController ()<UITextViewDelegate>
 @property(nonatomic,strong)MPMoviePlayerController *playerVC;
 @property(nonatomic,strong)UITextView *textView;
+
 @end
 
 @implementation ScienceViewController

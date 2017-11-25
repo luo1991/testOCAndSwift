@@ -8,8 +8,9 @@
 
 #import "CalendarViewController.h"
 #import "HWCalendar.h"
-@interface CalendarViewController ()<HWCalendarDelegate>
-
+@interface CalendarViewController ()<HWCalendarDelegate,UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic,strong)UITableView *tabelView;
+@property(nonatomic,strong)HWCalendar *calendar;
 @end
 
 @implementation CalendarViewController
@@ -18,20 +19,48 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     //日历
-    HWCalendar *calendar = [[HWCalendar alloc] init];
+    HWCalendar *calendar = [[HWCalendar alloc] initWithFrame:CGRectMake(0, 0, MainWidth, 360)];
     calendar.delegate = self;
+    calendar.backgroundColor = KbackColor;
     calendar.showTimePicker = YES;
-    [self.view addSubview:calendar];
-    //    WithFrame:CGRectMake(7, [UIScreen mainScreen].bounds.size.height, 400, 396)
-    [calendar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(MainWidth, 396));
-        make.top.mas_equalTo(0);
-        make.centerX.mas_equalTo(self.view);
+
+    
+    self.tabelView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    [self.view addSubview:self.tabelView];
+    [self.tabelView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.bottom.mas_equalTo(self.view);
     }];
+    
+    self.tabelView.delegate = self;
+    self.tabelView.dataSource = self;
+    
+    self.tabelView.tableHeaderView= calendar;
+    
+    
     // Do any additional setup after loading the view.
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return  arc4random() % 6;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44;
+}
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *ident = @"calendar";
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:ident];
+    if (!cell) {
+        cell= [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ident];
+    }
+    cell.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.text =[NSString stringWithFormat:@"%d数据", arc4random() % 10];
+    
+    return cell;
 }
 -(void)calendar:(HWCalendar *)calendar didClickSureButtonWithDate:(NSString *)date{
     NSLog(@"选择日期 %@",date);
+    
+    [self.tabelView reloadData];
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
