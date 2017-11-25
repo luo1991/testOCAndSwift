@@ -56,6 +56,12 @@
 
 #import "IQKeyboardManager.h"
 
+#import "HdNavigationController.h"
+
+#import "PublicToastView.h"
+#import "ViewZoom.h"
+#import "ToastView.h"
+
 
 #define  MainHeight  [[UIScreen mainScreen] bounds].size.height
 #define MainWidth    [[UIScreen mainScreen] bounds].size.width

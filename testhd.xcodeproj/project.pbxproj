@@ -58,6 +58,14 @@
 		84FA5D2F1F79EFDD00A3F311 /* HdTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FA5D291F79EFDD00A3F311 /* HdTableViewCell.xib */; };
 		84FA5D301F79EFDD00A3F311 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA5D2B1F79EFDD00A3F311 /* ViewController.m */; };
 		84FA5D331F79F03200A3F311 /* HdTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FA5D321F79F03200A3F311 /* HdTabBarController.m */; };
+		91578D411FC9A81800B3B5E1 /* AlertToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91578D371FC9A81800B3B5E1 /* AlertToastView.m */; };
+		91578D421FC9A81800B3B5E1 /* AlertToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91578D381FC9A81800B3B5E1 /* AlertToastView.xib */; };
+		91578D431FC9A81800B3B5E1 /* PublicToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91578D3A1FC9A81800B3B5E1 /* PublicToastView.m */; };
+		91578D441FC9A81800B3B5E1 /* ToastLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91578D3C1FC9A81800B3B5E1 /* ToastLabelView.m */; };
+		91578D451FC9A81800B3B5E1 /* ToastLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91578D3D1FC9A81800B3B5E1 /* ToastLabelView.xib */; };
+		91578D461FC9A81800B3B5E1 /* ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91578D3F1FC9A81800B3B5E1 /* ToastView.m */; };
+		91578D471FC9A81800B3B5E1 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91578D401FC9A81800B3B5E1 /* ToastView.xib */; };
+		91578D4B1FC9A98500B3B5E1 /* ViewZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 91578D4A1FC9A98500B3B5E1 /* ViewZoom.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -176,6 +184,19 @@
 		84FA5D311F79F03200A3F311 /* HdTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HdTabBarController.h; sourceTree = "<group>"; };
 		84FA5D321F79F03200A3F311 /* HdTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HdTabBarController.m; sourceTree = "<group>"; };
 		84FA5D341F7A400E00A3F311 /* testhd-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "testhd-Bridging-Header.h"; path = "Other/testhd-Bridging-Header.h"; sourceTree = "<group>"; };
+		91578D361FC9A81800B3B5E1 /* AlertToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertToastView.h; sourceTree = "<group>"; };
+		91578D371FC9A81800B3B5E1 /* AlertToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertToastView.m; sourceTree = "<group>"; };
+		91578D381FC9A81800B3B5E1 /* AlertToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertToastView.xib; sourceTree = "<group>"; };
+		91578D391FC9A81800B3B5E1 /* PublicToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicToastView.h; sourceTree = "<group>"; };
+		91578D3A1FC9A81800B3B5E1 /* PublicToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicToastView.m; sourceTree = "<group>"; };
+		91578D3B1FC9A81800B3B5E1 /* ToastLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastLabelView.h; sourceTree = "<group>"; };
+		91578D3C1FC9A81800B3B5E1 /* ToastLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastLabelView.m; sourceTree = "<group>"; };
+		91578D3D1FC9A81800B3B5E1 /* ToastLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastLabelView.xib; sourceTree = "<group>"; };
+		91578D3E1FC9A81800B3B5E1 /* ToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastView.h; sourceTree = "<group>"; };
+		91578D3F1FC9A81800B3B5E1 /* ToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastView.m; sourceTree = "<group>"; };
+		91578D401FC9A81800B3B5E1 /* ToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
+		91578D491FC9A98500B3B5E1 /* ViewZoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewZoom.h; sourceTree = "<group>"; };
+		91578D4A1FC9A98500B3B5E1 /* ViewZoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewZoom.m; sourceTree = "<group>"; };
 		D26763C0BE442AA8812BAF7D /* Pods-testhd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testhd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testhd/Pods-testhd.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,6 +265,7 @@
 		84356E801FA707EE00EB0EE1 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				91578D351FC9A81800B3B5E1 /* Toast */,
 				846D1BB01FC7EADD0083C423 /* DKColorTable.txt */,
 				846D1BA61FC7D8340083C423 /* HWCalendar */,
 				84356E8B1FA70BD500EB0EE1 /* Masonry */,
@@ -564,6 +586,34 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		91578D351FC9A81800B3B5E1 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				91578D481FC9A98500B3B5E1 /* ViewZoom */,
+				91578D361FC9A81800B3B5E1 /* AlertToastView.h */,
+				91578D371FC9A81800B3B5E1 /* AlertToastView.m */,
+				91578D381FC9A81800B3B5E1 /* AlertToastView.xib */,
+				91578D391FC9A81800B3B5E1 /* PublicToastView.h */,
+				91578D3A1FC9A81800B3B5E1 /* PublicToastView.m */,
+				91578D3B1FC9A81800B3B5E1 /* ToastLabelView.h */,
+				91578D3C1FC9A81800B3B5E1 /* ToastLabelView.m */,
+				91578D3D1FC9A81800B3B5E1 /* ToastLabelView.xib */,
+				91578D3E1FC9A81800B3B5E1 /* ToastView.h */,
+				91578D3F1FC9A81800B3B5E1 /* ToastView.m */,
+				91578D401FC9A81800B3B5E1 /* ToastView.xib */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		91578D481FC9A98500B3B5E1 /* ViewZoom */ = {
+			isa = PBXGroup;
+			children = (
+				91578D491FC9A98500B3B5E1 /* ViewZoom.h */,
+				91578D4A1FC9A98500B3B5E1 /* ViewZoom.m */,
+			);
+			path = ViewZoom;
+			sourceTree = "<group>";
+		};
 		D0BDFF5FE30BA7C5B966563C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -637,8 +687,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				844942991F6F9B1F00D19F32 /* LaunchScreen.storyboard in Resources */,
+				91578D421FC9A81800B3B5E1 /* AlertToastView.xib in Resources */,
 				846D1BB11FC7EADD0083C423 /* DKColorTable.txt in Resources */,
 				844942961F6F9B1F00D19F32 /* Assets.xcassets in Resources */,
+				91578D471FC9A81800B3B5E1 /* ToastView.xib in Resources */,
+				91578D451FC9A81800B3B5E1 /* ToastLabelView.xib in Resources */,
 				844942941F6F9B1F00D19F32 /* Main.storyboard in Resources */,
 				84FA5D2F1F79EFDD00A3F311 /* HdTableViewCell.xib in Resources */,
 				84C4B0711FC52229001B2367 /* detailCell.xib in Resources */,
@@ -717,6 +770,7 @@
 				84FA5D2D1F79EFDD00A3F311 /* OtherViewController.m in Sources */,
 				84FA5D2C1F79EFDD00A3F311 /* AppDelegate.m in Sources */,
 				846D1BAF1FC7DEEB0083C423 /* TitleScrollview.m in Sources */,
+				91578D461FC9A81800B3B5E1 /* ToastView.m in Sources */,
 				8449428B1F6F9B1F00D19F32 /* main.m in Sources */,
 				8424A4661F7A4307000B759E /* hdtest.swift in Sources */,
 				846D1BAC1FC7D8340083C423 /* HWOptionButton.m in Sources */,
@@ -727,6 +781,7 @@
 				84356EAB1FA70BD500EB0EE1 /* View+MASAdditions.m in Sources */,
 				843E9F741FBD3C130085D0D1 /* personModel.m in Sources */,
 				84356EB11FA72F4000EB0EE1 /* HotViewController.m in Sources */,
+				91578D411FC9A81800B3B5E1 /* AlertToastView.m in Sources */,
 				84356EA31FA70BD500EB0EE1 /* MASCompositeConstraint.m in Sources */,
 				84C25E781F9846C90001D8C2 /* ScienceViewController.m in Sources */,
 				84C4B0741FC52246001B2367 /* DetailCell.m in Sources */,
@@ -743,14 +798,17 @@
 				84FA5D2E1F79EFDD00A3F311 /* HdTableViewCell.m in Sources */,
 				84356EAA1FA70BD500EB0EE1 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				84FA5D301F79EFDD00A3F311 /* ViewController.m in Sources */,
+				91578D431FC9A81800B3B5E1 /* PublicToastView.m in Sources */,
 				8443B8F31FAABF40009FDD8C /* TabbarItem.m in Sources */,
 				842ED9661FA87DA700D4DB26 /* HttpToolRequest.m in Sources */,
 				846D1BB41FC805810083C423 /* CalendarViewController.m in Sources */,
 				8452F31A1F7BA42A002098F4 /* HdNavigationController.m in Sources */,
 				846D1BAB1FC7D8340083C423 /* HWCalendar.m in Sources */,
+				91578D441FC9A81800B3B5E1 /* ToastLabelView.m in Sources */,
 				84356EA91FA70BD500EB0EE1 /* NSArray+MASAdditions.m in Sources */,
 				84FA5D331F79F03200A3F311 /* HdTabBarController.m in Sources */,
 				84D570AD1FA80B4A00BCE018 /* WaterfallCollectionViewCell.m in Sources */,
+				91578D4B1FC9A98500B3B5E1 /* ViewZoom.m in Sources */,
 				84C25E751F9846A40001D8C2 /* ReadViewController.m in Sources */,
 				841664041F9D81700006B705 /* PersonTableViewCell.m in Sources */,
 			);
