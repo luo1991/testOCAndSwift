@@ -13,6 +13,7 @@
 #import "ReadViewController.h"
 #import "ScienceViewController.h"
 #import "InfoViewController.h"
+#import "HotViewController.h"
 #define KscreenWidth [UIScreen mainScreen].bounds.size.width
 
 #define KscreenHeight [UIScreen mainScreen].bounds.size.height
@@ -217,7 +218,9 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     KVOViewController *kvoVC = [[KVOViewController alloc] init];
     kvoVC.title = @"热点";
     [self addChildViewController:kvoVC];
-    ReadViewController *readerVC = [[ReadViewController alloc] init];
+    HotViewController *readerVC = [[HotViewController alloc] init];
+   
+//    ReadViewController *readerVC = [[ReadViewController alloc] init];
     readerVC.title = @"阅读";
     [self addChildViewController:readerVC];
     InfoViewController *otherVC = [[InfoViewController alloc] init];

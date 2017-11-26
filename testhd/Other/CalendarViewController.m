@@ -46,7 +46,7 @@
      NSLog(@"右边");
 //    [ToastView showViewWithTitle:@"这是什么" toast:@"东西啊"];
     
-    AlertToastView *alert = [[AlertToastView alloc] initWithTarget:self showTitle:@"测试" content:@"请输入文字" footTitles:@[@"左",@"中",@"右"]];
+    AlertToastView *alert = [[AlertToastView alloc] initWithTarget:self showTitle:nil content:@"确定退出当前登录吗?" footTitles:@[@"否",@"是"]];
     [alert show];
     
 

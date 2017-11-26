@@ -66,6 +66,9 @@
 		91578D461FC9A81800B3B5E1 /* ToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 91578D3F1FC9A81800B3B5E1 /* ToastView.m */; };
 		91578D471FC9A81800B3B5E1 /* ToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91578D401FC9A81800B3B5E1 /* ToastView.xib */; };
 		91578D4B1FC9A98500B3B5E1 /* ViewZoom.m in Sources */ = {isa = PBXBuildFile; fileRef = 91578D4A1FC9A98500B3B5E1 /* ViewZoom.m */; };
+		9161DF0F1FCAB516005439DA /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9161DF0E1FCAB516005439DA /* FirstViewController.m */; };
+		9161DF131FCABE5A005439DA /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9161DF111FCABE5A005439DA /* CollectionViewCell.m */; };
+		9161DF141FCABE5A005439DA /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9161DF121FCABE5A005439DA /* CollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -197,6 +200,11 @@
 		91578D401FC9A81800B3B5E1 /* ToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToastView.xib; sourceTree = "<group>"; };
 		91578D491FC9A98500B3B5E1 /* ViewZoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewZoom.h; sourceTree = "<group>"; };
 		91578D4A1FC9A98500B3B5E1 /* ViewZoom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewZoom.m; sourceTree = "<group>"; };
+		9161DF0D1FCAB516005439DA /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		9161DF0E1FCAB516005439DA /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		9161DF101FCABE5A005439DA /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		9161DF111FCABE5A005439DA /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		9161DF121FCABE5A005439DA /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		D26763C0BE442AA8812BAF7D /* Pods-testhd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testhd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testhd/Pods-testhd.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -562,6 +570,11 @@
 				848AABE81F94903D0094DCF8 /* hot */,
 				84356EAD1FA72E5000EB0EE1 /* other */,
 				84356EAE1FA72EDC00EB0EE1 /* person */,
+				9161DF0D1FCAB516005439DA /* FirstViewController.h */,
+				9161DF0E1FCAB516005439DA /* FirstViewController.m */,
+				9161DF101FCABE5A005439DA /* CollectionViewCell.h */,
+				9161DF111FCABE5A005439DA /* CollectionViewCell.m */,
+				9161DF121FCABE5A005439DA /* CollectionViewCell.xib */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -688,6 +701,7 @@
 			files = (
 				844942991F6F9B1F00D19F32 /* LaunchScreen.storyboard in Resources */,
 				91578D421FC9A81800B3B5E1 /* AlertToastView.xib in Resources */,
+				9161DF141FCABE5A005439DA /* CollectionViewCell.xib in Resources */,
 				846D1BB11FC7EADD0083C423 /* DKColorTable.txt in Resources */,
 				844942961F6F9B1F00D19F32 /* Assets.xcassets in Resources */,
 				91578D471FC9A81800B3B5E1 /* ToastView.xib in Resources */,
@@ -771,10 +785,12 @@
 				84FA5D2C1F79EFDD00A3F311 /* AppDelegate.m in Sources */,
 				846D1BAF1FC7DEEB0083C423 /* TitleScrollview.m in Sources */,
 				91578D461FC9A81800B3B5E1 /* ToastView.m in Sources */,
+				9161DF0F1FCAB516005439DA /* FirstViewController.m in Sources */,
 				8449428B1F6F9B1F00D19F32 /* main.m in Sources */,
 				8424A4661F7A4307000B759E /* hdtest.swift in Sources */,
 				846D1BAC1FC7D8340083C423 /* HWOptionButton.m in Sources */,
 				84C4B0781FC52D6E001B2367 /* NSString+isEmpty.m in Sources */,
+				9161DF131FCABE5A005439DA /* CollectionViewCell.m in Sources */,
 				84356EA81FA70BD500EB0EE1 /* MASViewConstraint.m in Sources */,
 				842AA09E1FAC587400DF6110 /* LoginViewController.m in Sources */,
 				846F1D611FC7BD1800606659 /* NSDate+Extension.m in Sources */,

@@ -15,9 +15,8 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
 
 
 
-#import "HWCalendar.h"
 
-@interface ReadViewController ()<HWCalendarDelegate,UIScrollViewDelegate>
+@interface ReadViewController ()<UIScrollViewDelegate>
 
 @property(nonatomic,strong)UIScrollView *titleScrollView;
 
@@ -35,53 +34,10 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    
-    NSInteger month = [NSDate month:[NSDate date]];
-    self.month = month;
-//    NSInteger year = [NSDate year:[NSDate date]];
-    NSMutableArray *getData = [NSMutableArray array];
-    for (int i= (int)month; i > 0; i--) {
-        NSString *getMonth = [NSString stringWithFormat:@"%d月",i];
-        [getData insertObject:getMonth atIndex:0];
-        if (i==1) {
-            for (int j= 12; j > 0; j--){
-                NSString *getMonth = [NSString stringWithFormat:@" %d月 ",j];
-                [getData insertObject:getMonth atIndex:0];
-            }
-        }
-    }
+   
     
     
-//    NSLog(@"huoqushuju %@",getData);
-    self.titleScrollView = [[UIScrollView alloc] init];
-    self.titleScrollView.backgroundColor = [UIColor whiteColor];
-    self.titleScrollView.showsHorizontalScrollIndicator = NO;
-    self.titleScrollView.dk_backgroundColorPicker = DKColorPickerWithKey(BG);
-//    [self.view addSubview:self.titleScrollView];
-//    [self.titleScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.equalTo(self.view.mas_width);
-//        make.top.mas_equalTo(0);
-//        make.height.mas_equalTo(44);
-//        make.left.equalTo(@0);
-//    }];
-    self.titleScrollView.contentSize = CGSizeMake(getData.count*labelWidth+40, 0);
-    self.titleScrollView.delegate = self;
-    [self setUpTitleLabelWithCount:getData];
-    
-    //日历
-    HWCalendar *calendar = [[HWCalendar alloc] init];
-    calendar.delegate = self;
-    calendar.showTimePicker = YES;
-    [self.view addSubview:calendar];
-//    WithFrame:CGRectMake(7, [UIScreen mainScreen].bounds.size.height, 400, 396)
-    [calendar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(400, 396));
-        make.top.mas_equalTo(0);
-        make.centerX.mas_equalTo(self.view);
-    }];
-    
-//    self.calendar = calendar;
-
+  
     
    
     
@@ -141,11 +97,7 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
     label.transform = CGAffineTransformMakeScale(radio, radio);
     _titleLabel = label;
     
-    if ([label.text rangeOfString:@" "].location!=NSNotFound) {
-        _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]-1];
-    }else{
-        _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]];
-    }
+  
 }
 
 -(void)tapClick:(UITapGestureRecognizer *)tap{
@@ -186,45 +138,7 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
         _yearLabel.text =  [NSString stringWithFormat:@"%ld",[NSDate year:[NSDate date]]];//今年
     }
     
-//    CGFloat currenPage = scrollView.contentOffset.x/scrollView.bounds.size.width;
-////    NSLog(@"currenPage %f",currenPage);
-//
-//
-//    NSInteger leftIndex = currenPage;
-//    NSInteger rigtIndex = leftIndex+1;
-//
-//
-//    UILabel *leftLabel = self.titleArray[leftIndex];
-    
-//    NSLog(@"leftalabel  %@",leftLabel.text);
-    
-//
-//    UILabel *rightLabel;
-//    if (rigtIndex <self.titleArray.count-2) {
-//        rightLabel = self.titleArray[rigtIndex];
-//    }
-//    CGFloat rightScale = currenPage-leftIndex;
-//        NSLog(@"rightScale--%f",rightScale);
-//
-//    CGFloat leftScale = 1-rightScale ;
-//        NSLog(@"leftScale--%f",leftScale);
-//
-//    // 左边缩放
-//    leftLabel.transform = CGAffineTransformMakeScale(leftScale * 0.3 + 1, leftScale * 0.3+ 1);
-//
-//    // 右边缩放
-//    rightLabel.transform = CGAffineTransformMakeScale(rightScale * 0.3 + 1, rightScale * 0.3+ 1);
-//
-//    if ([self.dk_manager.themeVersion isEqualToString:DKThemeVersionNight]) {
-//        leftLabel.textColor = [UIColor colorWithRed:leftScale green:0 blue:0 alpha:1];
-//        rightLabel.textColor = [UIColor colorWithRed:rightScale green:1 blue:1 alpha:1];
-//        //        NSLog(@"night");
-//    }else{
-//        leftLabel.textColor = [UIColor colorWithRed:leftScale green:0 blue:0 alpha:1];
-//        rightLabel.textColor = [UIColor colorWithRed:rightScale green:0 blue:0 alpha:1];
-//        //        NSLog(@"moon");
-//    }
-   
+
 }
 #pragma mark - 结束滚动 需要做的事情
 
@@ -239,15 +153,6 @@ static CGFloat const radio = 1.3;   // 点击或者滑动scrollView 标题Label�
 //    [self setUpTitleCenter:selLabel];
     
 }
-
-
-
-#pragma mark - HWCalendarDelegate
-- (void)calendar:(HWCalendar *)calendar didClickSureButtonWithDate:(NSString *)date
-{
-    NSLog(@"  HWCalendar  date %@",date);
-}
-
 
 
 
