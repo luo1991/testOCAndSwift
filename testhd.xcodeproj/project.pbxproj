@@ -955,7 +955,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				GCC_PREFIX_HEADER = /Users/luoyanyun123/Documents/testOCAndSwift/testhd/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/luomacmini/Desktop/testhd/testOCAndSwift/testhd/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -976,7 +976,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5e0066cf-5c15-4392-b999-4d2001cec11f";
 				PROVISIONING_PROFILE_SPECIFIER = test_dev;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/luoyanyun123/Documents/testOCAndSwift/testhd/Other/testhd-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/luomacmini/Desktop/testhd/testOCAndSwift/testhd/Other/testhd-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
@@ -998,7 +998,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
 				);
-				GCC_PREFIX_HEADER = /Users/luoyanyun123/Documents/testOCAndSwift/testhd/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = /Users/luomacmini/Desktop/testhd/testOCAndSwift/testhd/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1019,7 +1019,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5e0066cf-5c15-4392-b999-4d2001cec11f";
 				PROVISIONING_PROFILE_SPECIFIER = test_dev;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/luoyanyun123/Documents/testOCAndSwift/testhd/Other/testhd-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/luomacmini/Desktop/testhd/testOCAndSwift/testhd/Other/testhd-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};

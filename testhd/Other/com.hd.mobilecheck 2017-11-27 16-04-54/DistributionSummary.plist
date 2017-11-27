@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.hd.mobilecheck.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>armv7</string>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>96291E856F6B1CAA42DABEB6D4A10CD41C7DD847</string>
+				<key>dateExpires</key>
+				<string>2018/4/19</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>YCETQT9MCV.com.hd.newmobilecheck</string>
+				<key>aps-environment</key>
+				<string>development</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>YCETQT9MCV</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>com.hd.mobilecheck.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>f92a08d2-f9d5-44fb-bd24-00401eb364e4</string>
+				<key>name</key>
+				<string>guanggao_dev11.23_2</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>YCETQT9MCV</string>
+				<key>name</key>
+				<string>fengyuan zhang</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

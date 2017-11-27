@@ -27,6 +27,7 @@ pod 'DKNightVersion'
 pod 'DKNightVersion'
 pod 'XRCarouselView'
 pod 'IQKeyboardManager' #iOS8 and later
+pod 'XZPickView'
 
 #pod 'IQKeyboardManager', '3.3.7' #iOS7
 end

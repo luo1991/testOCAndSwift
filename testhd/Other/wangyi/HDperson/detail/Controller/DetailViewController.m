@@ -48,6 +48,7 @@
 //                     gifImageNamed(@"2.gif")//本地gif使用gifImageNamed(name)函数创建
 //                     ];
     _carouselView.describeArray = @[@"第一张",@"第2张",@"第3张",@"第4张"];
+    [_carouselView stopTimer];
     
     //设置每张图片的停留时间，默认值为5s，最少为1s
     _carouselView.time = 3;
@@ -57,7 +58,7 @@
     
     //设置分页控件的位置，默认为PositionBottomCenter
     _carouselView.pagePosition = PositionBottomCenter;
-    _carouselView.changeMode= ChangeModeFade;
+//    _carouselView.changeMode= ChangeModeFade;
     
     // 设置滑动时gif停止播放
     _carouselView.gifPlayMode = GifPlayModePauseWhenScroll;
@@ -83,6 +84,7 @@
 
 - (void)carouselView:(XRCarouselView *)carouselView clickImageAtIndex:(NSInteger)index{
     NSLog(@"点击%lu",(long)index);
+    
 }
 -(void)setUpTalbeView{
     if (!_tableView) {
